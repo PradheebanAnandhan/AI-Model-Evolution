@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: palm
+name: PaLM
+aliases: [Pathways Language Model]
+org: google
+family: PaLM
+releaseDate: 2022-04-04
+type: llm
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 540e9}
+contextWindow: 2048
+capabilities: [reasoning, code, multilingual]
+summary: >-
+  A 540B-parameter model trained across 6,144 TPU v4 chips with the Pathways system. It showed
+  breakthrough multi-step reasoning with chain-of-thought prompting.
+links:
+  paper: https://arxiv.org/abs/2204.02311
+  official: https://research.google/blog/pathways-language-model-palm-scaling-to-540-billion-parameters-for-breakthrough-performance/
+sources:
+  - id: blog
+    url: https://research.google/blog/pathways-language-model-palm-scaling-to-540-billion-parameters-for-breakthrough-performance/
+    title: "Pathways Language Model (PaLM): Scaling to 540 Billion Parameters"
+    publisher: Google Research
+  - id: paper
+    url: https://arxiv.org/abs/2204.02311
+    title: "PaLM: Scaling Language Modeling with Pathways"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  parameters: [paper]
+  contextWindow: [paper]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

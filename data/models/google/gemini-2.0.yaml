@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemini-2.0
+name: Gemini 2.0
+org: google
+family: Gemini
+releaseDate: 2024-12-11
+type: multimodal
+modalities: {input: [text, image, audio, video], output: [text, image, audio]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [agents, native tool use, native image and audio output]
+summary: >-
+  Pitched as the model for the agentic era. Gemini 2.0 Flash added native image and speech output
+  and native tool use.
+variants:
+  - name: Gemini 2.0 Flash
+  - name: Gemini 2.0 Flash-Lite
+  - name: Gemini 2.0 Pro
+links:
+  official: https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/
+relations:
+  - target: gemini-1.5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/
+    title: "Introducing Gemini 2.0: our new AI model for the agentic era"
+    publisher: Google
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  modalities: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

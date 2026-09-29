@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-4-turbo
+name: GPT-4 Turbo
+org: openai
+family: GPT
+releaseDate: 2023-11-06
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 128000
+trainingCutoff: 2023-04
+capabilities: [chat, code, JSON mode, function calling, image understanding]
+summary: >-
+  Announced at OpenAI DevDay. It cost less than GPT-4, had a 128K context window, and had knowledge
+  up to April 2023.
+links:
+  official: https://openai.com/index/new-models-and-developer-products-announced-at-devday/
+relations:
+  - target: gpt-4
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/new-models-and-developer-products-announced-at-devday/
+    title: New models and developer products announced at DevDay
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  contextWindow: [blog]
+  trainingCutoff: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

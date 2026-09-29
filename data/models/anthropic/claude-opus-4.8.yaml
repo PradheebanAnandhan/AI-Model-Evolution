@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-opus-4.8
+name: Claude Opus 4.8
+org: anthropic
+family: Claude
+releaseDate: 2026-05-28
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Hybrid reasoning model (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [computer use, browser agents, coding]
+summary: >-
+  Built on Opus 4.7. It was the strongest computer-use and browser-agent model Anthropic had tested,
+  scoring 84% on Online-Mind2Web.
+links:
+  official: https://www.anthropic.com/news/claude-opus-4-8
+relations:
+  - target: claude-opus-4.7
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-opus-4-8
+    title: Introducing Claude Opus 4.8
+    publisher: Anthropic
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  capabilities: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

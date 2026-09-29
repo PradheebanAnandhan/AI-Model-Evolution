@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: qwen3
+name: Qwen3
+org: alibaba
+family: Qwen
+releaseDate: 2025-04-29
+type: reasoning
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Dense and mixture-of-experts transformers
+parameters: {disclosed: true, total: 235e9, active: 22e9}
+contextWindow: 128000
+capabilities: [hybrid thinking, multilingual (119 languages), agents, code]
+summary: >-
+  Open models from 0.6B to 235B that switch between thinking and non-thinking modes. Trained on
+  about 36T tokens.
+variants:
+  - name: Qwen3-0.6B
+    parameters: {disclosed: true, total: 600e6}
+  - name: Qwen3-8B
+    parameters: {disclosed: true, total: 8e9}
+  - name: Qwen3-32B
+    parameters: {disclosed: true, total: 32e9}
+  - name: Qwen3-30B-A3B
+    parameters: {disclosed: true, total: 30e9, active: 3e9}
+  - name: Qwen3-235B-A22B
+    parameters: {disclosed: true, total: 235e9, active: 22e9}
+links:
+  official: https://qwenlm.github.io/blog/qwen3/
+  github: https://github.com/QwenLM/Qwen3
+relations:
+  - target: qwen2.5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://qwenlm.github.io/blog/qwen3/
+    title: "Qwen3: Think Deeper, Act Faster"
+    publisher: Qwen Team
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  variants: [blog]
+  contextWindow: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

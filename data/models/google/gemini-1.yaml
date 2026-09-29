@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemini-1
+name: Gemini 1.0
+org: google
+family: Gemini
+releaseDate: 2023-12-06
+type: multimodal
+modalities: {input: [text, image, audio, video], output: [text]}
+openness: closed
+architecture: Decoder-only transformer, natively multimodal
+parameters: {disclosed: false}
+contextWindow: 32768
+capabilities: [chat, reasoning, vision, audio understanding, code]
+summary: >-
+  Google DeepMind's first natively multimodal family. Ultra was reported as the first model to beat
+  human experts on MMLU.
+variants:
+  - name: Gemini Ultra
+  - name: Gemini Pro
+  - name: Gemini Nano-1
+    parameters: {disclosed: true, total: 1.8e9}
+  - name: Gemini Nano-2
+    parameters: {disclosed: true, total: 3.25e9}
+links:
+  paper: https://arxiv.org/abs/2312.11805
+  official: https://blog.google/technology/ai/google-gemini-ai/
+relations:
+  - target: palm-2
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.google/technology/ai/google-gemini-ai/
+    title: "Introducing Gemini: our largest and most capable AI model"
+    publisher: Google
+  - id: report
+    url: https://arxiv.org/abs/2312.11805
+    title: "Gemini: A Family of Highly Capable Multimodal Models"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  modalities: [report]
+  contextWindow: [report]
+  variants: [report]
+  architecture: [report]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

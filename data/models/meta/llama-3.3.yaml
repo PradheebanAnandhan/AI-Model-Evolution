@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: llama-3.3
+name: Llama 3.3
+org: meta
+family: Llama
+releaseDate: 2024-12-06
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Llama 3.3 Community License
+architecture: Dense decoder-only transformer
+parameters: {disclosed: true, total: 70e9}
+contextWindow: 128000
+capabilities: [text generation, tool use, multilingual]
+summary: >-
+  A 70B text model that Meta reported performs close to Llama 3.1 405B at a fraction of the serving
+  cost.
+links:
+  huggingface: https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct
+relations:
+  - target: llama-3.1
+    type: successor-of
+    note: Replaces Llama 3.1 70B.
+sources:
+  - id: hf
+    url: https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct
+    title: meta-llama/Llama-3.3-70B-Instruct model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [hf]
+  org: [hf]
+  openness: [hf]
+  license: [hf]
+  parameters: [hf]
+  contextWindow: [hf]
+status: draft
+updated: 2026-09-30

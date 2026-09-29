@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemini-3.5
+name: Gemini 3.5
+org: google
+family: Gemini
+releaseDate: 2026-05-19
+type: reasoning
+modalities: {input: [text, image, audio, video], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [agentic action, reasoning, multimodal understanding]
+summary: >-
+  Announced at Google I/O 2026 as frontier intelligence combined with action. Gemini 3.5 Flash
+  shipped first, with 3.5 Pro in internal use at announcement. Faster Flash updates followed through
+  the summer.
+variants:
+  - name: Gemini 3.5 Flash
+  - name: Gemini 3.5 Flash-Lite
+    notes: July 21, 2026.
+  - name: Gemini 3.6 Flash
+    notes: July 21, 2026.
+  - name: Gemini 3.7 Flash
+    notes: August 13, 2026.
+  - name: Gemini 3.8 Flash
+    notes: September 2, 2026.
+links:
+  official: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/
+relations:
+  - target: gemini-3.1
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/
+    title: "Gemini 3.5: frontier intelligence with action"
+    publisher: Google
+    accessed: 2026-09-30
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Gemini_(language_model)
+    title: Gemini (language model)
+    publisher: Wikipedia
+    accessed: 2026-09-30
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  summary: [blog]
+  variants: [wiki]
+status: draft
+updated: 2026-09-30

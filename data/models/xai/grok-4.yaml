@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: grok-4
+name: Grok 4
+org: xai
+family: Grok
+releaseDate: 2025-07
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, native tool use, real-time search]
+summary: >-
+  Trained with reinforcement learning at pre-training scale and native tool use. Grok 4 Heavy runs
+  several agents in parallel.
+variants:
+  - name: Grok 4
+  - name: Grok 4 Heavy
+links:
+  official: https://x.ai/news/grok-4
+relations:
+  - target: grok-3
+    type: successor-of
+sources:
+  - id: blog
+    url: https://x.ai/news/grok-4
+    title: Grok 4
+    publisher: xAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  variants: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-2
+name: Claude 2
+org: anthropic
+family: Claude
+releaseDate: 2023-07-11
+type: llm
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 100000
+capabilities: [chat, long documents, code]
+summary: >-
+  Improved coding, math and reasoning, with a 100K-token context window. Claude 2.1 (November 2023)
+  doubled the window to 200K.
+variants:
+  - name: Claude 2
+  - name: Claude 2.1
+    notes: 200K context, November 2023.
+links:
+  official: https://www.anthropic.com/news/claude-2
+relations:
+  - target: claude-1
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-2
+    title: Claude 2
+    publisher: Anthropic
+  - id: blog21
+    url: https://www.anthropic.com/news/claude-2-1
+    title: Introducing Claude 2.1
+    publisher: Anthropic
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  contextWindow: [blog]
+  variants: [blog21]
+status: draft
+updated: 2026-09-30

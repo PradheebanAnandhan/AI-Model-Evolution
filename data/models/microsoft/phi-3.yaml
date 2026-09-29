@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: phi-3
+name: Phi-3
+org: microsoft
+family: Phi
+releaseDate: 2024-04-23
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: MIT
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 14e9}
+contextWindow: 128000
+capabilities: [on-device, reasoning, long context]
+summary: >-
+  Small models built to run on a phone. Phi-3-mini (3.8B) rivaled Mixtral 8x7B and GPT-3.5 on
+  academic benchmarks.
+variants:
+  - name: Phi-3-mini
+    parameters: {disclosed: true, total: 3.8e9}
+    notes: 4K and 128K context versions.
+  - name: Phi-3-small
+    parameters: {disclosed: true, total: 7e9}
+  - name: Phi-3-medium
+    parameters: {disclosed: true, total: 14e9}
+links:
+  paper: https://arxiv.org/abs/2404.14219
+  official: https://azure.microsoft.com/en-us/blog/introducing-phi-3-redefining-whats-possible-with-slms/
+relations:
+  - target: phi-2
+    type: successor-of
+sources:
+  - id: blog
+    url: https://azure.microsoft.com/en-us/blog/introducing-phi-3-redefining-whats-possible-with-slms/
+    title: "Introducing Phi-3: Redefining what's possible with SLMs"
+    publisher: Microsoft Azure
+  - id: paper
+    url: https://arxiv.org/abs/2404.14219
+    title: "Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [paper]
+  variants: [paper]
+  contextWindow: [blog]
+  summary: [paper]
+status: draft
+updated: 2026-09-30

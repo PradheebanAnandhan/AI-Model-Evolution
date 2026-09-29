@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: dall-e-2
+name: DALL·E 2
+org: openai
+family: DALL·E
+releaseDate: 2022-04-06
+type: image
+modalities: {input: [text, image], output: [image]}
+openness: closed
+architecture: Diffusion decoder conditioned on CLIP image embeddings (unCLIP)
+parameters: {disclosed: false}
+capabilities: [text-to-image, inpainting, image variations]
+summary: >-
+  Generates images by inverting CLIP embeddings with a diffusion decoder, at 4x the resolution of
+  DALL·E, and adds editing and variations.
+links:
+  paper: https://arxiv.org/abs/2204.06125
+  official: https://openai.com/index/dall-e-2/
+relations:
+  - target: dall-e
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/dall-e-2/
+    title: DALL·E 2
+    publisher: OpenAI
+  - id: paper
+    url: https://arxiv.org/abs/2204.06125
+    title: Hierarchical Text-Conditional Image Generation with CLIP Latents
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  architecture: [paper]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

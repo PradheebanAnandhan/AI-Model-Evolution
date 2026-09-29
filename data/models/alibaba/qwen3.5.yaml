@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: qwen3.5
+name: Qwen3.5
+org: alibaba
+family: Qwen
+releaseDate: 2026-02-16
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: open-weights
+architecture: Mixture-of-experts vision-language model
+parameters: {disclosed: true, total: 397e9, active: 17e9}
+capabilities: [native multimodal agents, reasoning, coding]
+summary: >-
+  A native vision-language model released with open weights (Qwen3.5-397B-A17B) alongside the
+  proprietary Qwen3.5-Plus.
+variants:
+  - name: Qwen3.5-397B-A17B
+    parameters: {disclosed: true, total: 397e9, active: 17e9}
+  - name: Qwen3.5-Plus
+    notes: Proprietary, API only.
+links:
+  official: https://www.alibabacloud.com/blog/602894
+relations:
+  - target: qwen3
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.alibabacloud.com/blog/602894
+    title: "Qwen3.5: Towards Native Multimodal Agents"
+    publisher: Alibaba Cloud
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Qwen
+    title: Qwen
+    publisher: Wikipedia
+    accessed: 2026-09-30
+citations:
+  releaseDate: [wiki]
+  org: [blog]
+  openness: [wiki]
+  parameters: [wiki]
+  variants: [wiki]
+  summary: [blog, wiki]
+status: draft
+updated: 2026-09-30

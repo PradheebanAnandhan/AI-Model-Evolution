@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-5.3-codex
+name: GPT-5.3-Codex
+org: openai
+family: GPT
+releaseDate: 2026-02-05
+type: code
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [agentic coding]
+summary: >-
+  OpenAI's most capable agentic coding model at release, built by combining the Codex and GPT-5
+  training stacks.
+links:
+  official: https://openai.com/index/introducing-gpt-5-3-codex/
+relations:
+  - target: gpt-5.2
+    type: derived-from
+sources:
+  - id: blog
+    url: https://openai.com/index/introducing-gpt-5-3-codex/
+    title: Introducing GPT-5.3-Codex
+    publisher: OpenAI
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/GPT-5.3-Codex
+    title: GPT-5.3-Codex
+    publisher: Wikipedia
+citations:
+  releaseDate: [blog, wiki]
+  org: [blog]
+  openness: [blog]
+  summary: [blog]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

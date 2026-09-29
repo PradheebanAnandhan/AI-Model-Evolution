@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: deepseek-v3.1
+name: DeepSeek-V3.1
+org: deepseek
+family: DeepSeek-V
+releaseDate: 2025-08-21
+type: reasoning
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: MIT
+architecture: Mixture-of-experts transformer with MLA
+parameters: {disclosed: true, total: 671e9, active: 37e9}
+contextWindow: 128000
+capabilities: [hybrid thinking, tool use, agents]
+summary: >-
+  One hybrid model that supports both thinking and non-thinking modes, with stronger tool use and
+  agent skills after post-training.
+links:
+  huggingface: https://huggingface.co/deepseek-ai/DeepSeek-V3.1
+relations:
+  - target: deepseek-v3
+    type: successor-of
+sources:
+  - id: hf
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V3.1
+    title: deepseek-ai/DeepSeek-V3.1 model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [hf]
+  org: [hf]
+  openness: [hf]
+  license: [hf]
+  parameters: [hf]
+  contextWindow: [hf]
+  capabilities: [hf]
+status: draft
+updated: 2026-09-30

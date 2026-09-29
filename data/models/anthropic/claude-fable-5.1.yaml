@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-fable-5.1
+name: Claude Fable 5.1
+aliases: [Claude Mythos 5.1]
+org: anthropic
+family: Claude Mythos
+releaseDate: 2026-09-01
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, long-running agents, coding, research]
+summary: >-
+  Anthropic's most capable generally available model at release. Mythos 5.1 is the restricted-access
+  version of the same underlying model.
+variants:
+  - name: Claude Fable 5.1
+  - name: Claude Mythos 5.1
+    notes: Restricted access.
+links:
+  official: https://www.anthropic.com/claude-fable-and-mythos-5-1
+relations:
+  - target: claude-fable-5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/claude-fable-and-mythos-5-1
+    title: Introducing Claude Fable 5.1 and Claude Mythos 5.1
+    publisher: Anthropic
+  - id: newsroom
+    url: https://www.anthropic.com/news
+    title: Anthropic newsroom
+    publisher: Anthropic
+    accessed: 2026-09-30
+citations:
+  releaseDate: [newsroom, blog]
+  org: [blog]
+  openness: [blog]
+  variants: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

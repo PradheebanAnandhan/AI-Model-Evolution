@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: o3
+name: o3
+org: openai
+family: o-series
+releaseDate: 2025-04-16
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer trained with reinforcement learning to reason (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, tool use, visual reasoning, code]
+summary: >-
+  The first o-series models that can use every ChatGPT tool (search, Python, image analysis) inside
+  their reasoning. o3 was previewed in December 2024.
+variants:
+  - name: o3
+  - name: o4-mini
+links:
+  official: https://openai.com/index/introducing-o3-and-o4-mini/
+relations:
+  - target: o1
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/introducing-o3-and-o4-mini/
+    title: Introducing OpenAI o3 and o4-mini
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  capabilities: [blog]
+  variants: [blog]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

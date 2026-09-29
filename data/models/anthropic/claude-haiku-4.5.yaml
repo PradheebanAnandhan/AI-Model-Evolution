@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-haiku-4.5
+name: Claude Haiku 4.5
+org: anthropic
+family: Claude
+releaseDate: 2025-10-15
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Hybrid reasoning model (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 200000
+capabilities: [code, computer use, low latency]
+summary: >-
+  A small, fast model that Anthropic said matched Claude Sonnet 4 on coding at about one third of
+  the cost.
+links:
+  official: https://www.anthropic.com/news/claude-haiku-4-5
+relations:
+  - target: claude-3.5-sonnet
+    type: successor-of
+    note: Succeeds Claude 3.5 Haiku, listed as a variant there.
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-haiku-4-5
+    title: Introducing Claude Haiku 4.5
+    publisher: Anthropic
+  - id: models
+    url: https://docs.claude.com/en/docs/about-claude/models/overview
+    title: Models overview
+    publisher: Anthropic
+citations:
+  contextWindow: [models]
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

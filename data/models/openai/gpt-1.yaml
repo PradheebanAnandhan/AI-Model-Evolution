@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-1
+name: GPT-1
+aliases: [GPT]
+org: openai
+family: GPT
+releaseDate: 2018-06-11
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: MIT
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 117e6}
+contextWindow: 512
+capabilities: [text generation, transfer learning]
+summary: >-
+  Showed that generative pre-training on unlabeled text followed by task-specific fine-tuning beats
+  task-specific architectures on most language understanding benchmarks.
+links:
+  paper: https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
+  official: https://openai.com/index/language-unsupervised/
+  github: https://github.com/openai/finetune-transformer-lm
+relations:
+  - target: transformer
+    type: inspired-by
+sources:
+  - id: blog
+    url: https://openai.com/index/language-unsupervised/
+    title: Improving language understanding with unsupervised learning
+    publisher: OpenAI
+  - id: paper
+    url: https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
+    title: Improving Language Understanding by Generative Pre-Training
+    publisher: OpenAI
+  - id: gh
+    url: https://github.com/openai/finetune-transformer-lm
+    title: finetune-transformer-lm repository
+    publisher: GitHub
+  - id: gpt2
+    url: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
+    title: Language Models are Unsupervised Multitask Learners (Table 2)
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [gh]
+  license: [gh]
+  parameters: [gpt2]
+  contextWindow: [paper]
+  architecture: [paper]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

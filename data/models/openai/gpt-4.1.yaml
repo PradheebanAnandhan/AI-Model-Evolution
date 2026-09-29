@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-4.1
+name: GPT-4.1
+org: openai
+family: GPT
+releaseDate: 2025-04-14
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 1000000
+trainingCutoff: 2024-06
+capabilities: [code, instruction following, long context]
+summary: >-
+  An API-only family tuned for coding and instruction following, with a 1M-token context window, in
+  full, mini and nano sizes.
+variants:
+  - name: GPT-4.1
+  - name: GPT-4.1 mini
+  - name: GPT-4.1 nano
+links:
+  official: https://openai.com/index/gpt-4-1/
+relations:
+  - target: gpt-4o
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/gpt-4-1/
+    title: Introducing GPT-4.1 in the API
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  contextWindow: [blog]
+  trainingCutoff: [blog]
+  variants: [blog]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

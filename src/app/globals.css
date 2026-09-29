@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Atlas tokens (see docs/DESIGN.md). One light, editorial theme.
+   --------------------------------------------------------------------------- */
+:root {
+  --paper: #faf9f6;
+  --paper-2: #f2f0ea;
+  --card: #ffffff;
+  --ink: #1b1a17;
+  --ink-2: #57544d;
+  --ink-3: #8a867d;
+  --rule: #e5e1d8;
+  --rule-2: #cfc9bd;
+  --accent: #c8391f;
+  --highlight: #fbe7a1;
+  --focus: #1d4ed8;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-rule-2: var(--rule-2);
+  --color-accent: var(--accent);
+  --color-highlight: var(--highlight);
+  --color-focus: var(--focus);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-newsreader);
+}
+
+/* In a layer so Tailwind utilities can override these. */
+@layer base {
+  html,
+  body {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  body {
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--highlight);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities
+   --------------------------------------------------------------------------- */
+@utility font-display {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.015em;
+}
+
+@utility kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+@utility meta {
+  font-size: 12.5px;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+@utility card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgb(27 26 23 / 0.04);
+}
+
+@utility link {
+  text-decoration: underline;
+  text-decoration-color: var(--rule-2);
+  text-underline-offset: 3px;
+  transition:
+    text-decoration-color 160ms,
+    color 160ms;
+  &:hover {
+    color: var(--accent);
+    text-decoration-color: currentColor;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Timeline
+   --------------------------------------------------------------------------- */
+.tl-node {
+  cursor: pointer;
+  outline: none;
+}
+
+/* Scale SVG shapes around their own centre, consistently across browsers. */
+.tl-dot,
+.tl-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.tl-dot {
+  transition:
+    transform 220ms var(--ease-out),
+    opacity 260ms var(--ease-out);
+}
+
+.tl-node:hover .tl-dot,
+.tl-node:focus-visible .tl-dot,
+.tl-node[aria-pressed="true"] .tl-dot {
+  transform: scale(1.35);
+}
+
+.tl-node .tl-ring {
+  opacity: 0;
+  transition: opacity 180ms var(--ease-out);
+}
+
+.tl-node:hover .tl-ring,
+.tl-node:focus-visible .tl-ring {
+  opacity: 1;
+}
+
+.tl-node:focus-visible .tl-focus {
+  stroke: var(--focus);
+  stroke-width: 2;
+}
+
+.tl-fade {
+  transition: opacity 240ms var(--ease-out);
+}
+
+.tl-dim {
+  opacity: 0.16;
+}
+
+.tl-gone {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* A model the growth cursor or Play hasn't reached yet. */
+.tl-unborn {
+  pointer-events: none;
+}
+
+.tl-unborn .tl-dot {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.tl-label {
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+  animation: label-in 220ms var(--ease-out) both;
+}
+
+@keyframes label-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Lineage redraws when highlighted (paths use pathLength=1). */
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.tl-draw {
+  stroke-dasharray: 1;
+  animation: draw 520ms var(--ease-out) both;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  to {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+.tl-pulse {
+  animation: pulse 900ms var(--ease-out) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}

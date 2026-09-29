@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-5.4
+name: GPT-5.4
+org: openai
+family: GPT
+releaseDate: 2026-03-05
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, coding, agentic workflows, professional tasks]
+summary: >-
+  Brought GPT-5.3-Codex's coding abilities into the main GPT line, alongside better performance
+  across tools, software environments and professional tasks.
+relations:
+  - target: gpt-5.2
+    type: successor-of
+  - target: gpt-5.3-codex
+    type: inspired-by
+    note: Incorporates GPT-5.3-Codex's coding capabilities.
+sources:
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/GPT-5.4
+    title: GPT-5.4
+    publisher: Wikipedia
+    accessed: 2026-09-30
+citations:
+  releaseDate: [wiki]
+  org: [wiki]
+  openness: [wiki]
+  summary: [wiki]
+  relations: [wiki]
+status: draft
+updated: 2026-09-30

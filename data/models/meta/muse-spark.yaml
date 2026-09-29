@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: muse-spark
+name: Muse Spark
+org: meta
+family: Muse
+releaseDate: 2026-04-08
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Natively multimodal reasoning model (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [tool use, visual chain of thought, multi-agent orchestration]
+summary: >-
+  The first model from Meta Superintelligence Labs, and a turn away from open weights. It is small
+  and fast by design and powers Meta AI across Meta's apps.
+links:
+  official: https://ai.meta.com/blog/introducing-muse-spark-msl/
+relations:
+  - target: llama-4
+    type: successor-of
+    note: Meta's next flagship after Llama 4, released closed.
+sources:
+  - id: blog
+    url: https://ai.meta.com/blog/introducing-muse-spark-msl/
+    title: "Introducing Muse Spark: Scaling Towards Personal Superintelligence"
+    publisher: Meta AI
+  - id: news
+    url: https://about.fb.com/news/2026/04/introducing-muse-spark-meta-superintelligence-labs/
+    title: "Introducing Muse Spark: Meta's Most Powerful Model Yet"
+    publisher: Meta
+  - id: cnbc
+    url: https://www.cnbc.com/2026/04/08/meta-debuts-first-major-ai-model-since-14-billion-deal-to-bring-in-alexandr-wang.html
+    title: Meta debuts new AI model, attempting to catch Google, OpenAI after spending billions
+    publisher: CNBC
+citations:
+  releaseDate: [cnbc, news]
+  org: [blog]
+  openness: [cnbc]
+  capabilities: [blog]
+  summary: [blog, cnbc]
+  relations: [cnbc]
+status: draft
+updated: 2026-09-30

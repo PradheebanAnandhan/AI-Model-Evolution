@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-6
+name: GPT-6
+aliases: [GPT-6 Astra]
+org: openai
+family: GPT
+releaseDate: 2026-09-03
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [computer use, coding, cybersecurity, science, professional work]
+summary: >-
+  GPT-6 Astra was unveiled on September 3, 2026 and generally available the next day. The faster
+  GPT-6 Sol and Luna followed on September 22, trained with similar methods.
+variants:
+  - name: GPT-6 Astra
+  - name: GPT-6 Sol
+    notes: September 22, 2026.
+  - name: GPT-6 Luna
+    notes: September 22, 2026.
+links:
+  official: https://openai.com/index/gpt-6-astra/
+relations:
+  - target: gpt-5.6
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/gpt-6-astra/
+    title: "GPT-6 Astra: A new generation of intelligence"
+    publisher: OpenAI
+  - id: sol
+    url: https://openai.com/index/introducing-gpt-6-sol-and-luna/
+    title: Introducing GPT-6 Sol and Luna
+    publisher: OpenAI
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/GPT-6_Astra
+    title: GPT-6 Astra
+    publisher: Wikipedia
+citations:
+  releaseDate: [blog, wiki]
+  org: [blog]
+  openness: [blog]
+  variants: [sol, wiki]
+  capabilities: [blog]
+  summary: [wiki, sol]
+status: draft
+updated: 2026-09-30

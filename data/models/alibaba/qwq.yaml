@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: qwq
+name: QwQ
+org: alibaba
+family: Qwen
+releaseDate: 2024-11-28
+type: reasoning
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Dense decoder-only transformer
+parameters: {disclosed: true, total: 32e9}
+capabilities: [reasoning, math, code]
+summary: >-
+  Qwen's open reasoning model, built on Qwen2.5-32B. The March 2025 QwQ-32B release matched
+  DeepSeek-R1 on several benchmarks with far fewer parameters.
+variants:
+  - name: QwQ-32B-Preview
+    parameters: {disclosed: true, total: 32e9}
+  - name: QwQ-32B
+    parameters: {disclosed: true, total: 32e9}
+    notes: Released March 2025.
+links:
+  official: https://qwenlm.github.io/blog/qwq-32b-preview/
+relations:
+  - target: qwen2.5
+    type: derived-from
+sources:
+  - id: blog
+    url: https://qwenlm.github.io/blog/qwq-32b-preview/
+    title: "QwQ: Reflect Deeply on the Boundaries of the Unknown"
+    publisher: Qwen Team
+  - id: blog2
+    url: https://qwenlm.github.io/blog/qwq-32b/
+    title: "QwQ-32B: Embracing the Power of Reinforcement Learning"
+    publisher: Qwen Team
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog2]
+  license: [blog2]
+  parameters: [blog2]
+  variants: [blog, blog2]
+  relations: [blog2]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-fable-5
+name: Claude Fable 5
+aliases: [Claude Mythos 5]
+org: anthropic
+family: Claude Mythos
+releaseDate: 2026-06-09
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [software engineering, knowledge work, vision, scientific research]
+summary: >-
+  A Mythos-class model made safe for general use, state of the art on nearly every benchmark
+  Anthropic tested. Queries on some sensitive topics are answered by Claude Opus 4.8 instead.
+variants:
+  - name: Claude Fable 5
+  - name: Claude Mythos 5
+    notes: Same model with more permissive safeguards, for vetted organizations.
+links:
+  official: https://www.anthropic.com/news/claude-fable-5-mythos-5
+relations:
+  - target: claude-mythos-preview
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-fable-5-mythos-5
+    title: Claude Fable 5 and Claude Mythos 5
+    publisher: Anthropic
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Claude_Mythos
+    title: Claude Mythos
+    publisher: Wikipedia
+    accessed: 2026-09-30
+citations:
+  releaseDate: [blog, wiki]
+  org: [blog]
+  openness: [blog]
+  variants: [blog, wiki]
+  summary: [blog]
+  relations: [wiki]
+status: draft
+updated: 2026-09-30

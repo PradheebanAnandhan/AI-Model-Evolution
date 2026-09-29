@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: phi-4
+name: Phi-4
+org: microsoft
+family: Phi
+releaseDate: 2024-12-12
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: MIT
+architecture: Dense decoder-only transformer
+parameters: {disclosed: true, total: 14e9}
+contextWindow: 16000
+capabilities: [math, reasoning]
+summary: >-
+  A 14B model trained heavily on synthetic data. It beat its teacher GPT-4 on STEM question
+  answering.
+links:
+  paper: https://arxiv.org/abs/2412.08905
+  huggingface: https://huggingface.co/microsoft/phi-4
+relations:
+  - target: phi-3
+    type: successor-of
+sources:
+  - id: paper
+    url: https://arxiv.org/abs/2412.08905
+    title: Phi-4 Technical Report
+    publisher: arXiv
+  - id: hf
+    url: https://huggingface.co/microsoft/phi-4
+    title: microsoft/phi-4 model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [paper]
+  org: [paper]
+  openness: [hf]
+  license: [hf]
+  parameters: [paper]
+  contextWindow: [hf]
+  summary: [paper]
+status: draft
+updated: 2026-09-30

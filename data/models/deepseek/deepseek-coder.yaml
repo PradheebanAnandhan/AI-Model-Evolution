@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: deepseek-coder
+name: DeepSeek Coder
+org: deepseek
+family: DeepSeek Coder
+releaseDate: 2023-11-02
+type: code
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: DeepSeek License
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 33e9}
+contextWindow: 16384
+capabilities: [code generation, fill-in-the-middle, repository-level completion]
+summary: >-
+  DeepSeek's first release: code models trained from scratch on 2T tokens (87% code) with a 16K
+  window for repository-level completion.
+variants:
+  - name: DeepSeek Coder 1.3B
+    parameters: {disclosed: true, total: 1.3e9}
+  - name: DeepSeek Coder 6.7B
+    parameters: {disclosed: true, total: 6.7e9}
+  - name: DeepSeek Coder 33B
+    parameters: {disclosed: true, total: 33e9}
+links:
+  paper: https://arxiv.org/abs/2401.14196
+  github: https://github.com/deepseek-ai/DeepSeek-Coder
+sources:
+  - id: gh
+    url: https://github.com/deepseek-ai/DeepSeek-Coder
+    title: DeepSeek-Coder repository
+    publisher: GitHub
+  - id: paper
+    url: https://arxiv.org/abs/2401.14196
+    title: "DeepSeek-Coder: When the Large Language Model Meets Programming"
+    publisher: arXiv
+citations:
+  architecture: [paper]
+  releaseDate: [gh]
+  org: [gh]
+  openness: [gh]
+  license: [gh]
+  parameters: [gh]
+  variants: [gh]
+  contextWindow: [gh]
+  summary: [gh]
+status: draft
+updated: 2026-09-30

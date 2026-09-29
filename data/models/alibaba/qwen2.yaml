@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: qwen2
+name: Qwen2
+org: alibaba
+family: Qwen
+releaseDate: 2024-06-07
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: "Apache-2.0 (Qwen2-72B: Qianwen License)"
+architecture: Decoder-only transformer; one mixture-of-experts variant
+parameters: {disclosed: true, total: 72e9}
+contextWindow: 128000
+capabilities: [text generation, code, math, multilingual]
+summary: >-
+  Five sizes from 0.5B to 72B, including a 57B-A14B mixture-of-experts model. Trained on data in 27
+  languages beyond English and Chinese.
+variants:
+  - name: Qwen2-0.5B
+    parameters: {disclosed: true, total: 500e6}
+  - name: Qwen2-1.5B
+    parameters: {disclosed: true, total: 1.5e9}
+  - name: Qwen2-7B
+    parameters: {disclosed: true, total: 7e9}
+  - name: Qwen2-57B-A14B
+    parameters: {disclosed: true, total: 57e9, active: 14e9}
+  - name: Qwen2-72B
+    parameters: {disclosed: true, total: 72e9}
+links:
+  paper: https://arxiv.org/abs/2407.10671
+  official: https://qwenlm.github.io/blog/qwen2/
+relations:
+  - target: qwen
+    type: successor-of
+sources:
+  - id: blog
+    url: https://qwenlm.github.io/blog/qwen2/
+    title: Hello Qwen2
+    publisher: Qwen Team
+  - id: paper
+    url: https://arxiv.org/abs/2407.10671
+    title: Qwen2 Technical Report
+    publisher: arXiv
+citations:
+  architecture: [paper]
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  variants: [blog]
+  contextWindow: [blog]
+status: draft
+updated: 2026-09-30

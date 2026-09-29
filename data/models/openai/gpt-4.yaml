@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-4
+name: GPT-4
+org: openai
+family: GPT
+releaseDate: 2023-03-14
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 8192
+capabilities: [chat, reasoning, code, image understanding]
+summary: >-
+  OpenAI's first model to accept image input. It reached human-level results on many professional
+  and academic exams, such as passing a simulated bar exam in the top 10%.
+variants:
+  - name: GPT-4 (8K)
+  - name: GPT-4-32K
+    notes: 32,768-token context window.
+links:
+  paper: https://arxiv.org/abs/2303.08774
+  official: https://openai.com/index/gpt-4-research/
+relations:
+  - target: chatgpt
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/gpt-4-research/
+    title: GPT-4
+    publisher: OpenAI
+  - id: report
+    url: https://arxiv.org/abs/2303.08774
+    title: GPT-4 Technical Report
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [report]
+  parameters: [report]
+  modalities: [blog]
+  contextWindow: [blog]
+  variants: [blog]
+  capabilities: [blog, report]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-oss
+name: gpt-oss
+org: openai
+family: gpt-oss
+releaseDate: 2025-08-05
+type: reasoning
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Mixture-of-experts transformer
+parameters: {disclosed: true, total: 117e9, active: 5.1e9}
+contextWindow: 128000
+capabilities: [reasoning, tool use, chain-of-thought]
+summary: >-
+  OpenAI's first open-weight language models since GPT-2. They were trained with techniques from o3,
+  and the 20B model runs on a 16 GB machine.
+variants:
+  - name: gpt-oss-120b
+    parameters: {disclosed: true, total: 117e9, active: 5.1e9}
+  - name: gpt-oss-20b
+    parameters: {disclosed: true, total: 21e9, active: 3.6e9}
+links:
+  official: https://openai.com/index/introducing-gpt-oss/
+  github: https://github.com/openai/gpt-oss
+  huggingface: https://huggingface.co/openai/gpt-oss-120b
+relations:
+  - target: o3
+    type: inspired-by
+    note: Post-trained with techniques from o3.
+sources:
+  - id: blog
+    url: https://openai.com/index/introducing-gpt-oss/
+    title: Introducing gpt-oss
+    publisher: OpenAI
+  - id: gh
+    url: https://github.com/openai/gpt-oss
+    title: gpt-oss repository
+    publisher: GitHub
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [gh]
+  parameters: [blog]
+  variants: [blog]
+  contextWindow: [blog]
+  architecture: [blog]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

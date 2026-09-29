@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: opt
+name: OPT
+aliases: [Open Pretrained Transformer, OPT-175B]
+org: meta
+family: OPT
+releaseDate: 2022-05-03
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: OPT-175B License (non-commercial research)
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 175e9}
+contextWindow: 2048
+capabilities: [text generation]
+summary: >-
+  An open reproduction of GPT-3-class models from 125M to 175B parameters. Meta released the weights
+  together with its training logbook.
+variants:
+  - name: OPT-125M
+    parameters: {disclosed: true, total: 125e6}
+  - name: OPT-1.3B
+    parameters: {disclosed: true, total: 1.3e9}
+  - name: OPT-6.7B
+    parameters: {disclosed: true, total: 6.7e9}
+  - name: OPT-13B
+    parameters: {disclosed: true, total: 13e9}
+  - name: OPT-30B
+    parameters: {disclosed: true, total: 30e9}
+  - name: OPT-66B
+    parameters: {disclosed: true, total: 66e9}
+  - name: OPT-175B
+    parameters: {disclosed: true, total: 175e9}
+    notes: Research access on request.
+links:
+  paper: https://arxiv.org/abs/2205.01068
+  official: https://ai.meta.com/blog/democratizing-access-to-large-scale-language-models-with-opt-175b/
+relations:
+  - target: gpt-3
+    type: inspired-by
+    note: Built to match GPT-3's size and performance.
+sources:
+  - id: blog
+    url: https://ai.meta.com/blog/democratizing-access-to-large-scale-language-models-with-opt-175b/
+    title: Democratizing access to large-scale language models with OPT-175B
+    publisher: Meta AI
+  - id: paper
+    url: https://arxiv.org/abs/2205.01068
+    title: "OPT: Open Pre-trained Transformer Language Models"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [paper]
+  variants: [paper]
+  contextWindow: [paper]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

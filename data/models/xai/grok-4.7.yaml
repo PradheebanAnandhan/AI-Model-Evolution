@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: grok-4.7
+name: Grok 4.7
+org: xai
+family: Grok
+releaseDate: 2026-09-21
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [coding, agentic tasks, knowledge work]
+summary: >-
+  xAI's frontier model for coding, agentic tasks and knowledge work at release, available through
+  the xAI API.
+links:
+  official: https://docs.x.ai/developers/models
+relations:
+  - target: grok-4.6
+    type: successor-of
+sources:
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Grok_(chatbot)
+    title: Grok (chatbot)
+    publisher: Wikipedia
+    accessed: 2026-09-30
+  - id: docs
+    url: https://docs.x.ai/developers/models
+    title: Grok Models & Pricing
+    publisher: xAI
+citations:
+  releaseDate: [wiki]
+  org: [wiki]
+  openness: [docs]
+  summary: [docs]
+status: draft
+updated: 2026-09-30

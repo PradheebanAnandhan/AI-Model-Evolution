@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-neox-20b
+name: GPT-NeoX-20B
+org: eleutherai
+family: GPT-J/NeoX
+releaseDate: 2022-02-02
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-source
+license: Apache-2.0
+architecture: Decoder-only transformer with rotary embeddings
+parameters: {disclosed: true, total: 20e9}
+contextWindow: 2048
+capabilities: [text generation, few-shot learning]
+summary: >-
+  When released, the largest dense language model with publicly available weights. It was trained on
+  The Pile.
+links:
+  paper: https://arxiv.org/abs/2204.06745
+  official: https://blog.eleuther.ai/announcing-20b/
+  github: https://github.com/EleutherAI/gpt-neox
+relations:
+  - target: gpt-j
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.eleuther.ai/announcing-20b/
+    title: Announcing GPT-NeoX-20B
+    publisher: EleutherAI
+  - id: paper
+    url: https://arxiv.org/abs/2204.06745
+    title: "GPT-NeoX-20B: An Open-Source Autoregressive Language Model"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [paper]
+  parameters: [paper]
+  contextWindow: [paper]
+  summary: [paper]
+status: draft
+updated: 2026-09-30

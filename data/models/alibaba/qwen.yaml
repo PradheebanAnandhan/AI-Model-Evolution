@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: qwen
+name: Qwen
+aliases: [Tongyi Qianwen, Qwen 1]
+org: alibaba
+family: Qwen
+releaseDate: 2023-08-03
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Tongyi Qianwen License
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 72e9}
+capabilities: [text generation, chat, tool use, bilingual (Chinese and English)]
+summary: >-
+  Alibaba's first open-weight language models. They launched with Qwen-7B, and the 1.8B, 14B and 72B
+  sizes followed by the end of 2023.
+variants:
+  - name: Qwen-1.8B
+    parameters: {disclosed: true, total: 1.8e9}
+  - name: Qwen-7B
+    parameters: {disclosed: true, total: 7e9}
+  - name: Qwen-14B
+    parameters: {disclosed: true, total: 14e9}
+  - name: Qwen-72B
+    parameters: {disclosed: true, total: 72e9}
+links:
+  paper: https://arxiv.org/abs/2309.16609
+  github: https://github.com/QwenLM/Qwen
+sources:
+  - id: gh
+    url: https://github.com/QwenLM/Qwen
+    title: Qwen repository
+    publisher: GitHub
+  - id: paper
+    url: https://arxiv.org/abs/2309.16609
+    title: Qwen Technical Report
+    publisher: arXiv
+citations:
+  architecture: [paper]
+  releaseDate: [gh]
+  org: [gh]
+  openness: [gh]
+  license: [gh]
+  parameters: [gh]
+  variants: [gh]
+status: draft
+updated: 2026-09-30

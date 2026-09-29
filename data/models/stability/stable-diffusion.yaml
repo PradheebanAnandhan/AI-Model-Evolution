@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: stable-diffusion
+name: Stable Diffusion
+aliases: [Stable Diffusion 1]
+org: stability
+family: Stable Diffusion
+releaseDate: 2022-08-22
+type: image
+modalities: {input: [text, image], output: [image]}
+openness: open-weights
+license: CreativeML OpenRAIL-M
+architecture: "Latent diffusion: 860M U-Net with a 123M CLIP ViT-L/14 text encoder"
+parameters: {disclosed: true, total: 983e6}
+capabilities: [text-to-image, image-to-image, inpainting]
+summary: >-
+  A latent diffusion model, developed with CompVis at LMU Munich and Runway, that runs on consumer
+  GPUs. Its open release started an ecosystem of fine-tunes and tools.
+links:
+  official: https://stability.ai/news/stable-diffusion-public-release
+  github: https://github.com/CompVis/stable-diffusion
+sources:
+  - id: blog
+    url: https://stability.ai/news/stable-diffusion-public-release
+    title: Stable Diffusion Public Release
+    publisher: Stability AI
+  - id: gh
+    url: https://github.com/CompVis/stable-diffusion
+    title: stable-diffusion repository
+    publisher: GitHub
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [gh]
+  parameters: [gh]
+  architecture: [gh]
+  summary: [gh]
+status: draft
+updated: 2026-09-30

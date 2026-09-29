@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: kimi-k3
+name: Kimi K3
+org: moonshot
+family: Kimi
+releaseDate: 2026-07-16
+type: multimodal
+modalities: {input: [text, image, video], output: [text]}
+openness: open-weights
+license: Kimi K3 License
+architecture: Mixture-of-experts transformer (896 experts, 16 active) with MXFP4 weights
+parameters: {disclosed: true, total: 2.8e12, active: 104e9}
+contextWindow: 1048576
+capabilities: [native multimodal, agents, long context]
+summary: >-
+  The first open model in the 3-trillion-parameter class, natively multimodal across text, images
+  and video, with a 1M-token context window.
+links:
+  github: https://github.com/MoonshotAI/Kimi-K3
+  huggingface: https://huggingface.co/moonshotai/Kimi-K3
+relations:
+  - target: kimi-k2-thinking
+    type: successor-of
+sources:
+  - id: hf
+    url: https://huggingface.co/moonshotai/Kimi-K3
+    title: moonshotai/Kimi-K3 model card
+    publisher: Hugging Face
+    accessed: 2026-09-30
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Moonshot_AI
+    title: Moonshot AI
+    publisher: Wikipedia
+citations:
+  releaseDate: [wiki]
+  org: [hf]
+  openness: [hf]
+  license: [hf]
+  parameters: [hf]
+  contextWindow: [hf]
+  architecture: [hf]
+  modalities: [hf]
+  summary: [hf]
+status: draft
+updated: 2026-09-30

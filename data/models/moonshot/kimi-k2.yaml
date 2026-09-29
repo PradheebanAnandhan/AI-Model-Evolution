@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: kimi-k2
+name: Kimi K2
+org: moonshot
+family: Kimi
+releaseDate: 2025-07-11
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Modified MIT
+architecture: Mixture-of-experts transformer
+parameters: {disclosed: true, total: 1e12, active: 32e9}
+contextWindow: 128000
+capabilities: [agentic tool use, code]
+summary: >-
+  An open trillion-parameter mixture-of-experts model tuned for agentic tasks. It was trained with
+  the MuonClip optimizer on 15.5T tokens.
+links:
+  github: https://github.com/MoonshotAI/Kimi-K2
+  huggingface: https://huggingface.co/moonshotai/Kimi-K2-Instruct
+relations:
+  - target: deepseek-v3
+    type: inspired-by
+    note: Uses an architecture similar to DeepSeek-V3.
+sources:
+  - id: gh
+    url: https://github.com/MoonshotAI/Kimi-K2
+    title: Kimi-K2 repository
+    publisher: GitHub
+citations:
+  releaseDate: [gh]
+  org: [gh]
+  openness: [gh]
+  license: [gh]
+  parameters: [gh]
+  contextWindow: [gh]
+  architecture: [gh]
+  relations: [gh]
+  summary: [gh]
+status: draft
+updated: 2026-09-30

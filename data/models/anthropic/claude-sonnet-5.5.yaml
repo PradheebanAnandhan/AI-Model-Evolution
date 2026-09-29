@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-sonnet-5.5
+name: Claude Sonnet 5.5
+org: anthropic
+family: Claude
+releaseDate: 2026-09-28
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [coding, document work, low latency]
+summary: >-
+  A clear upgrade over Sonnet 5 that runs 30% faster and costs up to 30% less for most work.
+links:
+  official: https://www.anthropic.com/claude-sonnet-5-5
+relations:
+  - target: claude-sonnet-5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/claude-sonnet-5-5
+    title: Introducing Claude Sonnet 5.5
+    publisher: Anthropic
+  - id: newsroom
+    url: https://www.anthropic.com/news
+    title: Anthropic newsroom
+    publisher: Anthropic
+    accessed: 2026-09-30
+citations:
+  releaseDate: [newsroom]
+  org: [blog]
+  openness: [blog]
+  summary: [newsroom]
+status: draft
+updated: 2026-09-30

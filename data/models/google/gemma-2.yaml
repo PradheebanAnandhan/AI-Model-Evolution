@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemma-2
+name: Gemma 2
+org: google
+family: Gemma
+releaseDate: 2024-06-27
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Gemma Terms of Use
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 27e9}
+contextWindow: 8192
+capabilities: [text generation, chat]
+summary: >-
+  The second Gemma generation. The 27B model was competitive with models more than twice its size.
+variants:
+  - name: Gemma 2 2B
+    parameters: {disclosed: true, total: 2.6e9}
+    notes: Released July 2024.
+  - name: Gemma 2 9B
+    parameters: {disclosed: true, total: 9e9}
+  - name: Gemma 2 27B
+    parameters: {disclosed: true, total: 27e9}
+links:
+  paper: https://arxiv.org/abs/2408.00118
+  official: https://blog.google/technology/developers/google-gemma-2/
+relations:
+  - target: gemma
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.google/technology/developers/google-gemma-2/
+    title: Gemma 2 is now available to researchers and developers
+    publisher: Google
+  - id: report
+    url: https://arxiv.org/abs/2408.00118
+    title: "Gemma 2: Improving Open Language Models at a Practical Size"
+    publisher: arXiv
+citations:
+  contextWindow: [report]
+  architecture: [report]
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

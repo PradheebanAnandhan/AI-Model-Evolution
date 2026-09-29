@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: t5
+name: T5
+aliases: [Text-to-Text Transfer Transformer]
+org: google
+family: T5
+releaseDate: 2019-10-23
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-source
+license: Apache-2.0
+architecture: Encoder-decoder transformer
+parameters: {disclosed: true, total: 11e9}
+capabilities: [translation, summarization, question answering]
+summary: >-
+  Framed every NLP task as text-to-text and systematically compared pre-training choices. It
+  introduced the C4 dataset.
+variants:
+  - name: T5-Small
+    parameters: {disclosed: true, total: 60e6}
+  - name: T5-Base
+    parameters: {disclosed: true, total: 220e6}
+  - name: T5-Large
+    parameters: {disclosed: true, total: 770e6}
+  - name: T5-3B
+    parameters: {disclosed: true, total: 3e9}
+  - name: T5-11B
+    parameters: {disclosed: true, total: 11e9}
+links:
+  paper: https://arxiv.org/abs/1910.10683
+  github: https://github.com/google-research/text-to-text-transfer-transformer
+relations:
+  - target: transformer
+    type: inspired-by
+sources:
+  - id: paper
+    url: https://arxiv.org/abs/1910.10683
+    title: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer
+    publisher: arXiv
+  - id: gh
+    url: https://github.com/google-research/text-to-text-transfer-transformer
+    title: text-to-text-transfer-transformer repository
+    publisher: GitHub
+citations:
+  releaseDate: [paper]
+  org: [paper]
+  openness: [gh]
+  license: [gh]
+  parameters: [paper]
+  variants: [paper]
+  architecture: [paper]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

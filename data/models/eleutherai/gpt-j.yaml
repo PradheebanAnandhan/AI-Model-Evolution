@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-j
+name: GPT-J
+aliases: [GPT-J-6B]
+org: eleutherai
+family: GPT-J/NeoX
+releaseDate: 2021-06
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-source
+license: Apache-2.0
+architecture: Decoder-only transformer with rotary embeddings
+parameters: {disclosed: true, total: 6e9}
+contextWindow: 2048
+capabilities: [text generation, code]
+summary: >-
+  A 6B model trained on The Pile with Mesh Transformer JAX. It was among the largest openly released
+  GPT-style models of its time.
+links:
+  github: https://github.com/kingoflolz/mesh-transformer-jax
+  huggingface: https://huggingface.co/EleutherAI/gpt-j-6b
+sources:
+  - id: gh
+    url: https://github.com/kingoflolz/mesh-transformer-jax
+    title: mesh-transformer-jax repository
+    publisher: GitHub
+  - id: hf
+    url: https://huggingface.co/EleutherAI/gpt-j-6b
+    title: EleutherAI/gpt-j-6b model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [gh]
+  org: [hf]
+  openness: [gh]
+  license: [hf]
+  parameters: [hf]
+  contextWindow: [hf]
+  architecture: [hf]
+status: draft
+updated: 2026-09-30

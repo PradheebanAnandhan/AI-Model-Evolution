@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemini-omni
+name: Gemini Omni
+org: google
+family: Gemini Omni
+releaseDate: 2026-05-19
+type: video
+modalities: {input: [text, image, audio, video], output: [video]}
+openness: closed
+architecture: Multimodal generative model (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [any-to-video generation, conversational video editing]
+summary: >-
+  A model that can create anything from any input, starting with video. It combines images, audio,
+  video and text as input and edits videos through conversation.
+variants:
+  - name: Gemini Omni Flash
+  - name: Gemini Omni 1.1 Flash
+links:
+  official: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/
+relations:
+  - target: veo-3
+    type: inspired-by
+    note: Google's next video generation model after Veo.
+sources:
+  - id: blog
+    url: https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/
+    title: Introducing Gemini Omni
+    publisher: Google
+  - id: io
+    url: https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/
+    title: "Google I/O 2026: News and announcements"
+    publisher: Google
+citations:
+  releaseDate: [io]
+  org: [blog]
+  openness: [blog]
+  modalities: [blog]
+  capabilities: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

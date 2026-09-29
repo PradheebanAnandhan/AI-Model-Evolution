@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: falcon-180b
+name: Falcon 180B
+org: tii
+family: Falcon
+releaseDate: 2023-09-06
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Falcon-180B TII License
+architecture: Decoder-only transformer with multi-query attention
+parameters: {disclosed: true, total: 180e9}
+contextWindow: 2048
+capabilities: [text generation]
+summary: >-
+  A 180B model trained on 3.5T tokens, the largest open-weight model at its release.
+links:
+  official: https://huggingface.co/blog/falcon-180b
+  huggingface: https://huggingface.co/tiiuae/falcon-180B
+relations:
+  - target: falcon-40b
+    type: successor-of
+sources:
+  - id: blog
+    url: https://huggingface.co/blog/falcon-180b
+    title: "Spread Your Wings: Falcon 180B is here"
+    publisher: Hugging Face
+  - id: hf
+    url: https://huggingface.co/tiiuae/falcon-180B
+    title: tiiuae/falcon-180B model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [hf]
+  license: [hf]
+  parameters: [blog]
+  contextWindow: [hf]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

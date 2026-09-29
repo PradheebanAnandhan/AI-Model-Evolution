@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-4
+name: Claude 4
+org: anthropic
+family: Claude
+releaseDate: 2025-05-22
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Hybrid reasoning model (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 200000
+capabilities: [agentic coding, extended thinking with tool use, long-running tasks]
+summary: >-
+  Claude Opus 4 and Sonnet 4 set new marks on coding benchmarks such as SWE-bench, and can use tools
+  during extended thinking.
+variants:
+  - name: Claude Opus 4
+  - name: Claude Sonnet 4
+links:
+  official: https://www.anthropic.com/news/claude-4
+relations:
+  - target: claude-3.7-sonnet
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-4
+    title: Introducing Claude 4
+    publisher: Anthropic
+  - id: models
+    url: https://docs.claude.com/en/docs/about-claude/models/overview
+    title: Models overview
+    publisher: Anthropic
+citations:
+  contextWindow: [models]
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  variants: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

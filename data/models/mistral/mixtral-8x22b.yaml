@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: mixtral-8x22b
+name: Mixtral 8x22B
+org: mistral
+family: Mixtral
+releaseDate: 2024-04-17
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Sparse mixture-of-experts transformer
+parameters: {disclosed: true, total: 141e9, active: 39e9}
+contextWindow: 64000
+capabilities: [text generation, code, math, function calling]
+summary: >-
+  A larger open sparse mixture-of-experts model that uses 39B of its 141B parameters per token.
+links:
+  official: https://mistral.ai/news/mixtral-8x22b
+relations:
+  - target: mixtral-8x7b
+    type: successor-of
+sources:
+  - id: blog
+    url: https://mistral.ai/news/mixtral-8x22b
+    title: Cheaper, Better, Faster, Stronger
+    publisher: Mistral AI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  contextWindow: [blog]
+status: draft
+updated: 2026-09-30

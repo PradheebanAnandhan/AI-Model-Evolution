@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-mythos-preview
+name: Claude Mythos Preview
+org: anthropic
+family: Claude Mythos
+releaseDate: 2026-04-07
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [cybersecurity, vulnerability discovery, general reasoning]
+summary: >-
+  A general-purpose model that is exceptionally strong at computer security. It was withheld from
+  public release and offered only to Project Glasswing partners to find and fix vulnerabilities in
+  critical software.
+links:
+  official: https://www.anthropic.com/glasswing
+sources:
+  - id: glasswing
+    url: https://www.anthropic.com/glasswing
+    title: "Project Glasswing: Securing critical software for the AI era"
+    publisher: Anthropic
+  - id: assessment
+    url: https://www.anthropic.com/news/mythos-preview
+    title: Assessing Claude Mythos Preview's cybersecurity capabilities
+    publisher: Anthropic
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Claude_Mythos
+    title: Claude Mythos
+    publisher: Wikipedia
+    accessed: 2026-09-30
+citations:
+  releaseDate: [wiki]
+  org: [glasswing]
+  openness: [glasswing, wiki]
+  capabilities: [assessment]
+  summary: [glasswing]
+status: draft
+updated: 2026-09-30

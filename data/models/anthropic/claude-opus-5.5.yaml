@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-opus-5.5
+name: Claude Opus 5.5
+org: anthropic
+family: Claude
+releaseDate: 2026-09-22
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [complex reasoning, agentic coding]
+summary: >-
+  Performs at the level of Claude Fable 5.1 on most work and costs 40% less to run than Opus 5.
+links:
+  official: https://www.anthropic.com/claude-opus-5-5
+relations:
+  - target: claude-opus-5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/claude-opus-5-5
+    title: Introducing Claude Opus 5.5
+    publisher: Anthropic
+  - id: newsroom
+    url: https://www.anthropic.com/news
+    title: Anthropic newsroom
+    publisher: Anthropic
+    accessed: 2026-09-30
+citations:
+  releaseDate: [newsroom]
+  org: [blog]
+  openness: [blog]
+  summary: [newsroom]
+status: draft
+updated: 2026-09-30

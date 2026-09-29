@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: deepseek-v2
+name: DeepSeek-V2
+org: deepseek
+family: DeepSeek-V
+releaseDate: 2024-05
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: DeepSeek License
+architecture: Mixture-of-experts transformer with Multi-head Latent Attention (MLA)
+parameters: {disclosed: true, total: 236e9, active: 21e9}
+contextWindow: 128000
+capabilities: [text generation, code, long context]
+summary: >-
+  Introduced Multi-head Latent Attention and the DeepSeekMoE design. It cut KV-cache size by 93%
+  relative to DeepSeek 67B, and its low prices set off a Chinese API price war.
+links:
+  paper: https://arxiv.org/abs/2405.04434
+  github: https://github.com/deepseek-ai/DeepSeek-V2
+relations:
+  - target: deepseek-llm
+    type: successor-of
+sources:
+  - id: gh
+    url: https://github.com/deepseek-ai/DeepSeek-V2
+    title: DeepSeek-V2 repository
+    publisher: GitHub
+  - id: paper
+    url: https://arxiv.org/abs/2405.04434
+    title: "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model"
+    publisher: arXiv
+citations:
+  releaseDate: [paper]
+  org: [gh]
+  openness: [gh]
+  license: [gh]
+  parameters: [paper]
+  contextWindow: [paper]
+  architecture: [paper]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

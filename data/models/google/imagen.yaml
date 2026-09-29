@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: imagen
+name: Imagen
+org: google
+family: Imagen
+releaseDate: 2022-05-23
+type: image
+modalities: {input: [text], output: [image]}
+openness: closed
+architecture: Cascaded diffusion conditioned on a frozen T5-XXL text encoder
+parameters: {disclosed: false}
+capabilities: [text-to-image]
+summary: >-
+  Showed that scaling a frozen text-only language model (T5-XXL) matters more for image quality than
+  scaling the diffusion model.
+links:
+  paper: https://arxiv.org/abs/2205.11487
+  official: https://imagen.research.google/
+relations:
+  - target: t5
+    type: derived-from
+    note: Uses a frozen T5-XXL as its text encoder.
+sources:
+  - id: paper
+    url: https://arxiv.org/abs/2205.11487
+    title: Photorealistic Text-to-Image Diffusion Models with Deep Language Understanding
+    publisher: arXiv
+  - id: site
+    url: https://imagen.research.google/
+    title: Imagen
+    publisher: Google Research
+citations:
+  releaseDate: [paper]
+  org: [site]
+  openness: [site]
+  architecture: [paper]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

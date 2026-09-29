@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: codestral
+name: Codestral
+org: mistral
+family: Codestral
+releaseDate: 2024-05-29
+type: code
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Mistral AI Non-Production License
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 22e9}
+contextWindow: 32000
+capabilities: [code generation, fill-in-the-middle, 80+ programming languages]
+summary: >-
+  Mistral's first code model, trained on more than 80 programming languages.
+links:
+  official: https://mistral.ai/news/codestral
+sources:
+  - id: blog
+    url: https://mistral.ai/news/codestral
+    title: "Codestral: Hello, World!"
+    publisher: Mistral AI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  contextWindow: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

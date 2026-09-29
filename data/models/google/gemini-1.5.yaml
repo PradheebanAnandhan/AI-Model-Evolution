@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemini-1.5
+name: Gemini 1.5
+org: google
+family: Gemini
+releaseDate: 2024-02-15
+type: multimodal
+modalities: {input: [text, image, audio, video], output: [text]}
+openness: closed
+architecture: Mixture-of-experts transformer
+parameters: {disclosed: false}
+contextWindow: 1000000
+capabilities: [long context, video understanding, code]
+summary: >-
+  A mixture-of-experts model with a context window of up to 1M tokens in production (10M in
+  research). It could reason over hours of video or entire codebases.
+variants:
+  - name: Gemini 1.5 Pro
+  - name: Gemini 1.5 Flash
+    notes: Released May 2024.
+links:
+  paper: https://arxiv.org/abs/2403.05530
+  official: https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/
+relations:
+  - target: gemini-1
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/
+    title: "Our next-generation model: Gemini 1.5"
+    publisher: Google
+  - id: report
+    url: https://arxiv.org/abs/2403.05530
+    title: "Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  architecture: [blog]
+  contextWindow: [report]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

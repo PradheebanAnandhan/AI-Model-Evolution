@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: grok-4.6
+name: Grok 4.6
+org: xai
+family: Grok
+releaseDate: 2026-08-12
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [long-running agents, interactive and visual work]
+summary: >-
+  Built on Grok 4.5 with a focus on long-running agents and more ambitious interactive and visual
+  work.
+links:
+  official: https://x.ai/news/grok-4-6
+relations:
+  - target: grok-4.5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://x.ai/news/grok-4-6
+    title: Introducing Grok 4.6
+    publisher: xAI
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Grok_(chatbot)
+    title: Grok (chatbot)
+    publisher: Wikipedia
+    accessed: 2026-09-30
+citations:
+  releaseDate: [wiki]
+  org: [blog]
+  openness: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

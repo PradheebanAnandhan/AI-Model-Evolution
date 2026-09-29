@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: bloom
+name: BLOOM
+org: bigscience
+family: BLOOM
+releaseDate: 2022-07-12
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: BigScience RAIL License v1.0
+architecture: Decoder-only transformer with ALiBi
+parameters: {disclosed: true, total: 176e9}
+contextWindow: 2048
+capabilities: [multilingual (46 languages), code (13 languages)]
+summary: >-
+  A 176B multilingual model built by more than 1,000 researchers in the year-long BigScience
+  workshop and trained on the Jean Zay supercomputer.
+links:
+  paper: https://arxiv.org/abs/2211.05100
+  official: https://bigscience.huggingface.co/blog/bloom
+  huggingface: https://huggingface.co/bigscience/bloom
+sources:
+  - id: blog
+    url: https://bigscience.huggingface.co/blog/bloom
+    title: "Introducing The World's Largest Open Multilingual Language Model: BLOOM"
+    publisher: BigScience
+  - id: paper
+    url: https://arxiv.org/abs/2211.05100
+    title: "BLOOM: A 176B-Parameter Open-Access Multilingual Language Model"
+    publisher: arXiv
+  - id: hf
+    url: https://huggingface.co/bigscience/bloom
+    title: bigscience/bloom model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [hf]
+  license: [hf]
+  parameters: [paper]
+  contextWindow: [hf]
+  capabilities: [blog]
+  architecture: [paper]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: qwen2.5
+name: Qwen2.5
+org: alibaba
+family: Qwen
+releaseDate: 2024-09-19
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: "Apache-2.0 (3B and 72B: Qwen License)"
+architecture: Dense decoder-only transformer
+parameters: {disclosed: true, total: 72e9}
+contextWindow: 128000
+capabilities: [text generation, code, math, structured output]
+summary: >-
+  Pre-trained on up to 18T tokens, with dedicated Coder and Math versions. Qwen2.5 became one of the
+  most widely fine-tuned open model families.
+variants:
+  - name: Qwen2.5-0.5B
+    parameters: {disclosed: true, total: 500e6}
+  - name: Qwen2.5-1.5B
+    parameters: {disclosed: true, total: 1.5e9}
+  - name: Qwen2.5-3B
+    parameters: {disclosed: true, total: 3e9}
+  - name: Qwen2.5-7B
+    parameters: {disclosed: true, total: 7e9}
+  - name: Qwen2.5-14B
+    parameters: {disclosed: true, total: 14e9}
+  - name: Qwen2.5-32B
+    parameters: {disclosed: true, total: 32e9}
+  - name: Qwen2.5-72B
+    parameters: {disclosed: true, total: 72e9}
+links:
+  paper: https://arxiv.org/abs/2412.15115
+  official: https://qwenlm.github.io/blog/qwen2.5/
+relations:
+  - target: qwen2
+    type: successor-of
+sources:
+  - id: blog
+    url: https://qwenlm.github.io/blog/qwen2.5/
+    title: "Qwen2.5: A Party of Foundation Models!"
+    publisher: Qwen Team
+  - id: paper
+    url: https://arxiv.org/abs/2412.15115
+    title: Qwen2.5 Technical Report
+    publisher: arXiv
+citations:
+  architecture: [paper]
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  variants: [blog]
+  contextWindow: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

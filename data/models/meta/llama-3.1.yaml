@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: llama-3.1
+name: Llama 3.1
+org: meta
+family: Llama
+releaseDate: 2024-07-23
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Llama 3.1 Community License
+architecture: Dense decoder-only transformer
+parameters: {disclosed: true, total: 405e9}
+contextWindow: 128000
+capabilities: [text generation, tool use, multilingual]
+summary: >-
+  Brought the first frontier-scale open-weight model (405B) and extended context to 128K across all
+  sizes.
+variants:
+  - name: Llama 3.1 8B
+    parameters: {disclosed: true, total: 8e9}
+  - name: Llama 3.1 70B
+    parameters: {disclosed: true, total: 70e9}
+  - name: Llama 3.1 405B
+    parameters: {disclosed: true, total: 405e9}
+links:
+  paper: https://arxiv.org/abs/2407.21783
+  official: https://ai.meta.com/blog/meta-llama-3-1/
+relations:
+  - target: llama-3
+    type: successor-of
+sources:
+  - id: blog
+    url: https://ai.meta.com/blog/meta-llama-3-1/
+    title: "Introducing Llama 3.1: Our most capable models to date"
+    publisher: Meta AI
+  - id: paper
+    url: https://arxiv.org/abs/2407.21783
+    title: The Llama 3 Herd of Models
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [paper]
+  variants: [blog]
+  contextWindow: [blog]
+  architecture: [paper]
+status: draft
+updated: 2026-09-30

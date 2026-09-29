@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: command-r-plus
+name: Command R+
+org: cohere
+family: Command
+releaseDate: 2024-04-04
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: CC-BY-NC-4.0
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 104e9}
+contextWindow: 128000
+capabilities: [retrieval-augmented generation, multi-step tool use, multilingual]
+summary: >-
+  A larger, more capable Command R, launched first on Microsoft Azure. Its 104B weights became one
+  of the strongest open models of spring 2024.
+links:
+  official: https://cohere.com/blog/command-r-plus-microsoft-azure
+  huggingface: https://huggingface.co/CohereForAI/c4ai-command-r-plus
+relations:
+  - target: command-r
+    type: successor-of
+sources:
+  - id: blog
+    url: https://cohere.com/blog/command-r-plus-microsoft-azure
+    title: "Introducing Command R+: A Scalable LLM Built for Business"
+    publisher: Cohere
+  - id: hf
+    url: https://huggingface.co/CohereForAI/c4ai-command-r-plus
+    title: CohereForAI/c4ai-command-r-plus model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [hf]
+  license: [hf]
+  parameters: [hf]
+  contextWindow: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-5
+name: GPT-5
+org: openai
+family: GPT
+releaseDate: 2025-08-07
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Routed system of a fast model and a deeper reasoning model (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, code, agentic tasks, writing, health]
+summary: >-
+  A unified system: a router picks between a fast model and a deeper-thinking one. It replaced
+  GPT-4o and o3 as the default in ChatGPT.
+variants:
+  - name: GPT-5
+  - name: GPT-5 mini
+  - name: GPT-5 nano
+links:
+  official: https://openai.com/index/introducing-gpt-5/
+relations:
+  - target: gpt-4.5
+    type: successor-of
+  - target: o3
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/introducing-gpt-5/
+    title: Introducing GPT-5
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  architecture: [blog]
+  relations: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

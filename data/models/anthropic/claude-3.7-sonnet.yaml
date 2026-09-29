@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-3.7-sonnet
+name: Claude 3.7 Sonnet
+org: anthropic
+family: Claude
+releaseDate: 2025-02-24
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Hybrid reasoning model (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 200000
+capabilities: [extended thinking, code, agentic coding]
+summary: >-
+  The first hybrid reasoning model: a single model that answers instantly or thinks step by step,
+  with a visible, adjustable thinking budget. Claude Code launched alongside it.
+links:
+  official: https://www.anthropic.com/news/claude-3-7-sonnet
+relations:
+  - target: claude-3.5-sonnet
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-3-7-sonnet
+    title: Claude 3.7 Sonnet and Claude Code
+    publisher: Anthropic
+  - id: models
+    url: https://docs.claude.com/en/docs/about-claude/models/overview
+    title: Models overview
+    publisher: Anthropic
+citations:
+  contextWindow: [models]
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  architecture: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: command-a
+name: Command A
+org: cohere
+family: Command
+releaseDate: 2025-03-13
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: CC-BY-NC-4.0
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 111e9}
+contextWindow: 256000
+capabilities: [agents, tool use, retrieval-augmented generation, multilingual]
+summary: >-
+  An enterprise model built to run on just two GPUs, with a 256K context window.
+links:
+  official: https://cohere.com/blog/command-a
+  huggingface: https://huggingface.co/CohereForAI/c4ai-command-a-03-2025
+relations:
+  - target: command-r-plus
+    type: successor-of
+sources:
+  - id: blog
+    url: https://cohere.com/blog/command-a
+    title: "Introducing Command A: Max performance, minimal compute"
+    publisher: Cohere
+  - id: hf
+    url: https://huggingface.co/CohereForAI/c4ai-command-a-03-2025
+    title: CohereForAI/c4ai-command-a-03-2025 model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [hf]
+  license: [hf]
+  parameters: [hf]
+  contextWindow: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

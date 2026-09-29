@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: instructgpt
+name: InstructGPT
+org: openai
+family: GPT
+releaseDate: 2022-01-27
+type: llm
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Decoder-only transformer, fine-tuned with RLHF
+parameters: {disclosed: true, total: 175e9}
+capabilities: [instruction following]
+summary: >-
+  GPT-3 fine-tuned with reinforcement learning from human feedback (RLHF). Labelers preferred the
+  1.3B InstructGPT's outputs to those of the 175B GPT-3.
+variants:
+  - name: InstructGPT 1.3B
+    parameters: {disclosed: true, total: 1.3e9}
+  - name: InstructGPT 6B
+    parameters: {disclosed: true, total: 6e9}
+  - name: InstructGPT 175B
+    parameters: {disclosed: true, total: 175e9}
+links:
+  paper: https://arxiv.org/abs/2203.02155
+  official: https://openai.com/index/instruction-following/
+relations:
+  - target: gpt-3
+    type: derived-from
+sources:
+  - id: blog
+    url: https://openai.com/index/instruction-following/
+    title: Aligning language models to follow instructions
+    publisher: OpenAI
+  - id: paper
+    url: https://arxiv.org/abs/2203.02155
+    title: Training language models to follow instructions with human feedback
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  parameters: [paper]
+  variants: [paper]
+  relations: [paper]
+  summary: [paper]
+status: draft
+updated: 2026-09-30

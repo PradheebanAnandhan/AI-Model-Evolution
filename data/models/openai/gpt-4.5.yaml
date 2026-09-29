@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-4.5
+name: GPT-4.5
+aliases: [Orion]
+org: openai
+family: GPT
+releaseDate: 2025-02-27
+type: llm
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [chat, writing, world knowledge]
+summary: >-
+  OpenAI's largest pre-trained chat model at release. It scaled unsupervised learning rather than
+  reasoning, aiming for broader knowledge and fewer hallucinations.
+links:
+  official: https://openai.com/index/introducing-gpt-4-5/
+relations:
+  - target: gpt-4o
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/introducing-gpt-4-5/
+    title: Introducing GPT-4.5
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

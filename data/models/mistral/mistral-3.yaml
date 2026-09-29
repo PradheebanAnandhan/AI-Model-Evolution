@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: mistral-3
+name: Mistral 3
+aliases: [Mistral Large 3, Ministral 3]
+org: mistral
+family: Mistral Large
+releaseDate: 2025-12-02
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Sparse mixture-of-experts (Large 3) and dense models (Ministral 3)
+parameters: {disclosed: true, total: 675e9, active: 41e9}
+capabilities: [multilingual (40+ languages), image understanding, reasoning]
+summary: >-
+  Mistral Large 3, a 675B-parameter open mixture-of-experts model, plus small dense Ministral 3
+  models in base, instruct and reasoning versions. All are Apache 2.0.
+variants:
+  - name: Mistral Large 3
+    parameters: {disclosed: true, total: 675e9, active: 41e9}
+  - name: Ministral 3 14B
+    parameters: {disclosed: true, total: 14e9}
+  - name: Ministral 3 8B
+    parameters: {disclosed: true, total: 8e9}
+  - name: Ministral 3 3B
+    parameters: {disclosed: true, total: 3e9}
+links:
+  official: https://mistral.ai/news/mistral-3/
+relations:
+  - target: mistral-large-2
+    type: successor-of
+sources:
+  - id: blog
+    url: https://mistral.ai/news/mistral-3/
+    title: Introducing Mistral 3
+    publisher: Mistral AI
+    accessed: 2026-09-30
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  variants: [blog]
+  architecture: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

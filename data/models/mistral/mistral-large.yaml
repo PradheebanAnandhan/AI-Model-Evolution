@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: mistral-large
+name: Mistral Large
+org: mistral
+family: Mistral Large
+releaseDate: 2024-02-26
+type: llm
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 32000
+capabilities: [reasoning, multilingual, function calling]
+summary: >-
+  Mistral's first flagship model offered only through its API, launched with Microsoft Azure as a
+  distribution partner.
+links:
+  official: https://mistral.ai/news/mistral-large
+sources:
+  - id: blog
+    url: https://mistral.ai/news/mistral-large
+    title: Au Large
+    publisher: Mistral AI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  contextWindow: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

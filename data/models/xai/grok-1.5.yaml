@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: grok-1.5
+name: Grok-1.5
+org: xai
+family: Grok
+releaseDate: 2024-03-28
+type: llm
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 128000
+capabilities: [reasoning, long context, code]
+summary: >-
+  Improved reasoning and extended the context window to 128K tokens.
+links:
+  official: https://x.ai/news/grok-1.5
+relations:
+  - target: grok-1
+    type: successor-of
+sources:
+  - id: blog
+    url: https://x.ai/news/grok-1.5
+    title: Announcing Grok-1.5
+    publisher: xAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  contextWindow: [blog]
+status: draft
+updated: 2026-09-30

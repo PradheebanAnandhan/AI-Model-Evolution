@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-5.2
+name: GPT-5.2
+org: openai
+family: GPT
+releaseDate: 2025-12-11
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, professional work, code]
+summary: >-
+  Shipped as GPT-5.2 Instant, Thinking and Pro. OpenAI retired the GPT-5.2 models from ChatGPT in
+  June 2026.
+variants:
+  - name: GPT-5.2 Instant
+  - name: GPT-5.2 Thinking
+  - name: GPT-5.2 Pro
+relations:
+  - target: gpt-5.1
+    type: successor-of
+sources:
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/GPT-5.2
+    title: GPT-5.2
+    publisher: Wikipedia
+citations:
+  releaseDate: [wiki]
+  org: [wiki]
+  openness: [wiki]
+  variants: [wiki]
+  summary: [wiki]
+status: draft
+updated: 2026-09-30

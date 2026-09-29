@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: chatgpt
+name: ChatGPT (GPT-3.5)
+aliases: [GPT-3.5, gpt-3.5-turbo]
+org: openai
+family: GPT
+releaseDate: 2022-11-30
+type: llm
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Decoder-only transformer, fine-tuned with RLHF
+parameters: {disclosed: false}
+capabilities: [chat, instruction following, code]
+summary: >-
+  A conversational model fine-tuned from the GPT-3.5 series with RLHF, as a sibling of InstructGPT.
+  Its public research preview brought LLMs to a mass audience.
+links:
+  official: https://openai.com/index/chatgpt/
+relations:
+  - target: gpt-3
+    type: successor-of
+  - target: instructgpt
+    type: inspired-by
+    note: Trained with the same RLHF method.
+sources:
+  - id: blog
+    url: https://openai.com/index/chatgpt/
+    title: Introducing ChatGPT
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  relations: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

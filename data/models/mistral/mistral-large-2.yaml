@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: mistral-large-2
+name: Mistral Large 2
+org: mistral
+family: Mistral Large
+releaseDate: 2024-07-24
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Mistral Research License
+architecture: Dense decoder-only transformer
+parameters: {disclosed: true, total: 123e9}
+contextWindow: 128000
+capabilities: [code, reasoning, multilingual, function calling]
+summary: >-
+  A 123B model with a 128K context window. Its weights were published for research and
+  non-commercial use.
+links:
+  official: https://mistral.ai/news/mistral-large-2407
+relations:
+  - target: mistral-large
+    type: successor-of
+sources:
+  - id: blog
+    url: https://mistral.ai/news/mistral-large-2407
+    title: Large Enough
+    publisher: Mistral AI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  contextWindow: [blog]
+status: draft
+updated: 2026-09-30

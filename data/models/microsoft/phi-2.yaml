@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: phi-2
+name: Phi-2
+org: microsoft
+family: Phi
+releaseDate: 2023-12-12
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: MIT
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 2.7e9}
+contextWindow: 2048
+capabilities: [reasoning, language understanding, code]
+summary: >-
+  A 2.7B model that matched or outperformed models up to 25x larger on complex benchmarks.
+links:
+  official: https://www.microsoft.com/en-us/research/blog/phi-2-the-surprising-power-of-small-language-models/
+  huggingface: https://huggingface.co/microsoft/phi-2
+relations:
+  - target: phi-1
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.microsoft.com/en-us/research/blog/phi-2-the-surprising-power-of-small-language-models/
+    title: "Phi-2: The surprising power of small language models"
+    publisher: Microsoft Research
+  - id: hf
+    url: https://huggingface.co/microsoft/phi-2
+    title: microsoft/phi-2 model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [hf]
+  license: [hf]
+  parameters: [blog]
+  contextWindow: [hf]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

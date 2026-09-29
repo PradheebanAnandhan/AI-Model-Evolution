@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: grok-4.5
+name: Grok 4.5
+org: xai
+family: Grok
+releaseDate: 2026-07-08
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [coding, agents]
+summary: >-
+  Released first to developers through Grok Build, the Cursor editor and the xAI API console.
+links:
+  official: https://x.ai/news/grok-4-5
+relations:
+  - target: grok-4.1
+    type: successor-of
+sources:
+  - id: blog
+    url: https://x.ai/news/grok-4-5
+    title: Introducing Grok 4.5
+    publisher: xAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

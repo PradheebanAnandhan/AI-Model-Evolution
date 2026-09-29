@@ -1,0 +1,23 @@
+# Invalid: releaseDate is not YYYY[-MM[-DD]].
+id: bad-date
+name: Bad Date
+org: acme
+family: Test
+releaseDate: March 2023
+type: llm
+modalities: { input: [text], output: [text] }
+openness: closed
+architecture: Transformer
+parameters: { disclosed: false }
+summary: Broken on purpose.
+sources:
+  - id: s1
+    url: https://example.com
+    title: Example
+    accessed: 2026-01-01
+citations:
+  releaseDate: [s1]
+  org: [s1]
+  openness: [s1]
+status: draft
+updated: 2026-01-01

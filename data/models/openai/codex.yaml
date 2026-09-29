@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: codex
+name: Codex
+org: openai
+family: GPT
+releaseDate: 2021-07-07
+type: code
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Decoder-only transformer (GPT-3 fine-tuned on code)
+parameters: {disclosed: true, total: 12e9}
+capabilities: [code generation, code completion]
+summary: >-
+  GPT-3 fine-tuned on public GitHub code. It introduced the HumanEval benchmark and powered the
+  first version of GitHub Copilot.
+links:
+  paper: https://arxiv.org/abs/2107.03374
+  official: https://openai.com/index/openai-codex/
+relations:
+  - target: gpt-3
+    type: derived-from
+sources:
+  - id: paper
+    url: https://arxiv.org/abs/2107.03374
+    title: Evaluating Large Language Models Trained on Code
+    publisher: arXiv
+  - id: blog
+    url: https://openai.com/index/openai-codex/
+    title: OpenAI Codex
+    publisher: OpenAI
+citations:
+  releaseDate: [paper]
+  org: [paper]
+  openness: [blog]
+  parameters: [paper]
+  relations: [paper]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

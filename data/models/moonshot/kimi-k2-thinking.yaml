@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: kimi-k2-thinking
+name: Kimi K2 Thinking
+org: moonshot
+family: Kimi
+releaseDate: 2025-11
+type: reasoning
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Modified MIT
+architecture: Mixture-of-experts transformer with native INT4 quantization
+parameters: {disclosed: true, total: 1e12, active: 32e9}
+contextWindow: 256000
+capabilities: [reasoning, agentic tool use (200–300 sequential calls)]
+summary: >-
+  An open reasoning version of Kimi K2 that can run hundreds of sequential tool calls autonomously.
+  It was served in native INT4.
+links:
+  huggingface: https://huggingface.co/moonshotai/Kimi-K2-Thinking
+relations:
+  - target: kimi-k2
+    type: derived-from
+sources:
+  - id: hf
+    url: https://huggingface.co/moonshotai/Kimi-K2-Thinking
+    title: moonshotai/Kimi-K2-Thinking model card
+    publisher: Hugging Face
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Moonshot_AI
+    title: Moonshot AI
+    publisher: Wikipedia
+citations:
+  releaseDate: [wiki]
+  org: [hf]
+  openness: [hf]
+  license: [hf]
+  parameters: [hf, wiki]
+  contextWindow: [hf, wiki]
+  summary: [wiki]
+  relations: [hf]
+status: draft
+updated: 2026-09-30

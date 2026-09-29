@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: dall-e-3
+name: DALL·E 3
+org: openai
+family: DALL·E
+releaseDate: 2023-09-20
+type: image
+modalities: {input: [text], output: [image]}
+openness: closed
+architecture: Diffusion (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [text-to-image, prompt following]
+summary: >-
+  Built natively into ChatGPT, which rewrites prompts for it. It follows detailed prompts far more
+  faithfully than DALL·E 2.
+links:
+  official: https://openai.com/index/dall-e-3/
+relations:
+  - target: dall-e-2
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/dall-e-3/
+    title: DALL·E 3
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: dall-e
+name: DALL·E
+org: openai
+family: DALL·E
+releaseDate: 2021-01-05
+type: image
+modalities: {input: [text], output: [image]}
+openness: closed
+architecture: Autoregressive transformer over text and image tokens
+parameters: {disclosed: true, total: 12e9}
+capabilities: [text-to-image]
+summary: >-
+  A 12-billion-parameter version of GPT-3 trained to generate images from text descriptions, using a
+  discrete VAE to turn images into tokens.
+links:
+  paper: https://arxiv.org/abs/2102.12092
+  official: https://openai.com/index/dall-e/
+relations:
+  - target: gpt-3
+    type: inspired-by
+sources:
+  - id: blog
+    url: https://openai.com/index/dall-e/
+    title: "DALL·E: Creating images from text"
+    publisher: OpenAI
+  - id: paper
+    url: https://arxiv.org/abs/2102.12092
+    title: Zero-Shot Text-to-Image Generation
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  parameters: [paper]
+  architecture: [paper]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

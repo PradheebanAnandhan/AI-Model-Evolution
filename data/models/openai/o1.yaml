@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: o1
+name: o1
+aliases: [o1-preview, Strawberry]
+org: openai
+family: o-series
+releaseDate: 2024-09-12
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer trained with reinforcement learning to reason (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, math, code, chain-of-thought]
+summary: >-
+  The first model trained with large-scale reinforcement learning to produce a long hidden chain of
+  thought before answering. It sharply improved results on competition math and code.
+variants:
+  - name: o1-preview
+  - name: o1-mini
+  - name: o1
+    notes: Full release December 2024.
+links:
+  official: https://openai.com/index/learning-to-reason-with-llms/
+sources:
+  - id: blog
+    url: https://openai.com/index/learning-to-reason-with-llms/
+    title: Learning to reason with LLMs
+    publisher: OpenAI
+  - id: preview
+    url: https://openai.com/index/introducing-openai-o1-preview/
+    title: Introducing OpenAI o1-preview
+    publisher: OpenAI
+citations:
+  releaseDate: [preview]
+  org: [blog]
+  openness: [preview]
+  architecture: [blog]
+  capabilities: [blog]
+  variants: [preview]
+status: draft
+updated: 2026-09-30

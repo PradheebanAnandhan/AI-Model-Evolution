@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: llama-3.2
+name: Llama 3.2
+org: meta
+family: Llama
+releaseDate: 2024-09-25
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: open-weights
+license: Llama 3.2 Community License
+architecture: Decoder-only transformer; vision models add an image encoder via adapters
+parameters: {disclosed: true, total: 90e9}
+contextWindow: 128000
+capabilities: [vision, on-device, text generation]
+summary: >-
+  Added the first Llama vision models (11B, 90B) and lightweight 1B and 3B text models for edge and
+  mobile devices.
+variants:
+  - name: Llama 3.2 1B
+    parameters: {disclosed: true, total: 1e9}
+  - name: Llama 3.2 3B
+    parameters: {disclosed: true, total: 3e9}
+  - name: Llama 3.2 11B Vision
+    parameters: {disclosed: true, total: 11e9}
+  - name: Llama 3.2 90B Vision
+    parameters: {disclosed: true, total: 90e9}
+links:
+  official: https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/
+relations:
+  - target: llama-3.1
+    type: successor-of
+sources:
+  - id: blog
+    url: https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/
+    title: "Llama 3.2: Revolutionizing edge AI and vision with open, customizable models"
+    publisher: Meta AI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  variants: [blog]
+  contextWindow: [blog]
+  modalities: [blog]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,56 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemma-4
+name: Gemma 4
+org: google
+family: Gemma
+releaseDate: 2026-04-02
+type: multimodal
+modalities: {input: [text, image, audio], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Dense and mixture-of-experts transformers
+parameters: {disclosed: true, total: 31e9}
+contextWindow: 256000
+capabilities: [reasoning, agentic workflows, vision, on-device]
+summary: >-
+  Open models built from Gemini 3 research, in four sizes from phone-scale to 31B. They were the
+  first Gemma models under the permissive Apache 2.0 license.
+variants:
+  - name: Gemma 4 E2B
+    notes: Effective 2B; text, vision and audio; 128K context.
+  - name: Gemma 4 E4B
+    notes: Effective 4B; text, vision and audio; 128K context.
+  - name: Gemma 4 26B MoE
+    parameters: {disclosed: true, total: 26e9, active: 3.8e9}
+    notes: 256K context.
+  - name: Gemma 4 31B
+    parameters: {disclosed: true, total: 31e9}
+    notes: 256K context.
+links:
+  official: https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/
+relations:
+  - target: gemma-3
+    type: successor-of
+  - target: gemini-3
+    type: inspired-by
+    note: Built from Gemini 3 research.
+sources:
+  - id: blog
+    url: https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/
+    title: "Gemma 4: Byte for byte, the most capable open models"
+    publisher: Google
+    accessed: 2026-09-30
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  contextWindow: [blog]
+  variants: [blog]
+  modalities: [blog]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

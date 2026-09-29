@@ -1,0 +1,115 @@
+# One row per organization on the timeline, top to bottom by `order`.
+# Colors are flat print colors chosen to read on the light paper background.
+# yaml-language-server: $schema=../schema/organizations.schema.json
+
+- id: openai
+  name: OpenAI
+  color: "#0e8f6f"
+  country: US
+  website: https://openai.com
+  order: 10
+
+- id: google
+  name: Google / DeepMind
+  shortName: Google
+  color: "#2f6fe4"
+  country: US
+  website: https://deepmind.google
+  order: 20
+
+- id: anthropic
+  name: Anthropic
+  color: "#c4623f"
+  country: US
+  website: https://www.anthropic.com
+  order: 30
+
+- id: meta
+  name: Meta AI
+  shortName: Meta
+  color: "#6d4fd8"
+  country: US
+  website: https://ai.meta.com
+  order: 40
+
+- id: mistral
+  name: Mistral AI
+  shortName: Mistral
+  color: "#d98a0b"
+  country: FR
+  website: https://mistral.ai
+  order: 50
+
+- id: deepseek
+  name: DeepSeek
+  color: "#1a86ad"
+  country: CN
+  website: https://www.deepseek.com
+  order: 60
+
+- id: alibaba
+  name: Alibaba Qwen
+  shortName: Qwen
+  color: "#d2436a"
+  country: CN
+  website: https://qwenlm.github.io
+  order: 70
+
+- id: xai
+  name: xAI
+  color: "#4b5563"
+  country: US
+  website: https://x.ai
+  order: 80
+
+- id: microsoft
+  name: Microsoft
+  color: "#5b9416"
+  country: US
+  website: https://www.microsoft.com/en-us/research/
+  order: 90
+
+- id: moonshot
+  name: Moonshot AI
+  shortName: Moonshot
+  color: "#a349bd"
+  country: CN
+  website: https://www.moonshot.ai
+  order: 95
+
+- id: eleutherai
+  name: EleutherAI
+  color: "#a7651c"
+  country: US
+  website: https://www.eleuther.ai
+  order: 100
+
+- id: bigscience
+  name: BigScience
+  color: "#db5896"
+  country: FR
+  website: https://bigscience.huggingface.co
+  order: 110
+
+- id: stability
+  name: Stability AI
+  shortName: Stability
+  color: "#4a53cf"
+  country: GB
+  website: https://stability.ai
+  order: 120
+
+- id: tii
+  name: Technology Innovation Institute
+  shortName: TII
+  color: "#96840f"
+  country: AE
+  website: https://www.tii.ae
+  order: 130
+
+- id: cohere
+  name: Cohere
+  color: "#21857b"
+  country: CA
+  website: https://cohere.com
+  order: 140

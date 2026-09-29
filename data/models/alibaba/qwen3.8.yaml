@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: qwen3.8
+name: Qwen3.8
+org: alibaba
+family: Qwen
+releaseDate: 2026-08-03
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+architecture: Mixture-of-experts transformer
+parameters: {disclosed: true, total: 2.4e12, active: 95e9}
+capabilities: [reasoning, coding, agents]
+summary: >-
+  Qwen3.8-Max launched in the cloud on August 3, 2026. Its weights followed nine days later as
+  Qwen3.8-2.4T-A95B, one of the largest open-weight models.
+variants:
+  - name: Qwen3.8-Max
+    notes: Cloud release, August 3, 2026.
+  - name: Qwen3.8-2.4T-A95B
+    parameters: {disclosed: true, total: 2.4e12, active: 95e9}
+    notes: Open weights, August 12, 2026.
+  - name: Qwen3.8-Flash-Next
+    notes: August 26, 2026; previews the Qwen4 architecture.
+links:
+  official: https://www.alibabacloud.com/blog/qwen3-8-flash-next-a-new-architecture-towardsultimate-cost-efficiency_603501
+relations:
+  - target: qwen3.5
+    type: successor-of
+sources:
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Qwen
+    title: Qwen
+    publisher: Wikipedia
+    accessed: 2026-09-30
+citations:
+  releaseDate: [wiki]
+  org: [wiki]
+  openness: [wiki]
+  parameters: [wiki]
+  variants: [wiki]
+  summary: [wiki]
+status: draft
+updated: 2026-09-30

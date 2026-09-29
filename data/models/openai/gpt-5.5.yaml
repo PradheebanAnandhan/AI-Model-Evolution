@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-5.5
+name: GPT-5.5
+org: openai
+family: GPT
+releaseDate: 2026-04-23
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, agentic work, coding]
+summary: >-
+  Launched as GPT-5.5 Thinking and Pro, with API access the next day and GPT-5.5 Instant in May.
+  OpenAI described it as its smartest and most intuitive model yet.
+variants:
+  - name: GPT-5.5 Thinking
+  - name: GPT-5.5 Pro
+  - name: GPT-5.5 Instant
+    notes: May 5, 2026.
+links:
+  official: https://openai.com/index/introducing-gpt-5-5/
+relations:
+  - target: gpt-5.4
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/introducing-gpt-5-5/
+    title: Introducing GPT-5.5
+    publisher: OpenAI
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/GPT-5.5
+    title: GPT-5.5
+    publisher: Wikipedia
+    accessed: 2026-09-30
+citations:
+  releaseDate: [wiki]
+  org: [blog]
+  openness: [wiki]
+  variants: [wiki]
+  summary: [blog, wiki]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-sonnet-4.6
+name: Claude Sonnet 4.6
+org: anthropic
+family: Claude
+releaseDate: 2026-02-17
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Hybrid reasoning model (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [coding, computer use, agent planning, knowledge work]
+summary: >-
+  Brought performance that previously needed an Opus-class model to the Sonnet tier. Developers
+  preferred it to its predecessor by a wide margin for consistency and instruction following.
+links:
+  official: https://www.anthropic.com/news/claude-sonnet-4-6
+relations:
+  - target: claude-sonnet-4.5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-sonnet-4-6
+    title: Introducing Claude Sonnet 4.6
+    publisher: Anthropic
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  capabilities: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

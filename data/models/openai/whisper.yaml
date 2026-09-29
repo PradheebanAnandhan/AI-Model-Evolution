@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: whisper
+name: Whisper
+org: openai
+family: Whisper
+releaseDate: 2022-09-21
+type: audio
+modalities: {input: [audio], output: [text]}
+openness: open-weights
+license: MIT
+architecture: Encoder-decoder transformer
+parameters: {disclosed: true, total: 1.55e9}
+capabilities: [speech recognition, speech translation, language identification]
+summary: >-
+  A speech recognition model trained on 680,000 hours of weakly supervised multilingual audio. It
+  approaches human robustness and accuracy on English.
+variants:
+  - name: tiny
+    parameters: {disclosed: true, total: 39e6}
+  - name: base
+    parameters: {disclosed: true, total: 74e6}
+  - name: small
+    parameters: {disclosed: true, total: 244e6}
+  - name: medium
+    parameters: {disclosed: true, total: 769e6}
+  - name: large
+    parameters: {disclosed: true, total: 1.55e9}
+links:
+  paper: https://arxiv.org/abs/2212.04356
+  official: https://openai.com/index/whisper/
+  github: https://github.com/openai/whisper
+sources:
+  - id: blog
+    url: https://openai.com/index/whisper/
+    title: Introducing Whisper
+    publisher: OpenAI
+  - id: gh
+    url: https://github.com/openai/whisper
+    title: whisper repository
+    publisher: GitHub
+  - id: paper
+    url: https://arxiv.org/abs/2212.04356
+    title: Robust Speech Recognition via Large-Scale Weak Supervision
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [gh]
+  license: [gh]
+  parameters: [gh]
+  variants: [gh]
+  architecture: [paper]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

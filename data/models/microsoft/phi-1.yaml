@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: phi-1
+name: phi-1
+org: microsoft
+family: Phi
+releaseDate: 2023-06-20
+type: code
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: MIT
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 1.3e9}
+capabilities: [Python code generation]
+summary: >-
+  A 1.3B code model trained on textbook-quality and synthetic data. It showed that data quality can
+  stand in for scale.
+links:
+  paper: https://arxiv.org/abs/2306.11644
+  huggingface: https://huggingface.co/microsoft/phi-1
+sources:
+  - id: paper
+    url: https://arxiv.org/abs/2306.11644
+    title: Textbooks Are All You Need
+    publisher: arXiv
+  - id: hf
+    url: https://huggingface.co/microsoft/phi-1
+    title: microsoft/phi-1 model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [paper]
+  org: [paper]
+  openness: [hf]
+  license: [hf]
+  parameters: [paper]
+  summary: [paper]
+status: draft
+updated: 2026-09-30

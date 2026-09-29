@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: llama-4
+name: Llama 4
+org: meta
+family: Llama
+releaseDate: 2025-04-05
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: open-weights
+license: Llama 4 Community License
+architecture: Mixture-of-experts transformer, natively multimodal
+parameters: {disclosed: true, total: 400e9, active: 17e9}
+contextWindow: 10000000
+capabilities: [vision, long context, multilingual]
+summary: >-
+  Meta's first mixture-of-experts and natively multimodal Llama models. Scout supports a 10M-token
+  context window.
+variants:
+  - name: Llama 4 Scout
+    parameters: {disclosed: true, total: 109e9, active: 17e9}
+    notes: 16 experts, 10M context.
+  - name: Llama 4 Maverick
+    parameters: {disclosed: true, total: 400e9, active: 17e9}
+    notes: 128 experts, 1M context.
+links:
+  official: https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+relations:
+  - target: llama-3.3
+    type: successor-of
+sources:
+  - id: blog
+    url: https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+    title: "The Llama 4 herd: The beginning of a new era of natively multimodal AI innovation"
+    publisher: Meta AI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  variants: [blog]
+  contextWindow: [blog]
+  architecture: [blog]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,7 @@
+# Deliberately broken fixture for the validator tests.
+- id: acme
+  name: Acme AI
+  color: "#ff0000"
+  country: US
+  website: https://acme.example
+  order: 1

@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: flan-t5
+name: Flan-T5
+org: google
+family: T5
+releaseDate: 2022-10-20
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Encoder-decoder transformer
+parameters: {disclosed: true, total: 11e9}
+capabilities: [instruction following, few-shot learning]
+summary: >-
+  T5 instruction-tuned on more than 1,800 tasks. Released openly, Flan-T5 became a popular base for
+  instruction-following research.
+variants:
+  - name: Flan-T5-Small
+    parameters: {disclosed: true, total: 80e6}
+  - name: Flan-T5-Base
+    parameters: {disclosed: true, total: 250e6}
+  - name: Flan-T5-Large
+    parameters: {disclosed: true, total: 780e6}
+  - name: Flan-T5-XL
+    parameters: {disclosed: true, total: 3e9}
+  - name: Flan-T5-XXL
+    parameters: {disclosed: true, total: 11e9}
+links:
+  paper: https://arxiv.org/abs/2210.11416
+  huggingface: https://huggingface.co/google/flan-t5-xxl
+relations:
+  - target: t5
+    type: derived-from
+sources:
+  - id: paper
+    url: https://arxiv.org/abs/2210.11416
+    title: Scaling Instruction-Finetuned Language Models
+    publisher: arXiv
+  - id: hf
+    url: https://huggingface.co/google/flan-t5-xxl
+    title: google/flan-t5-xxl model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [paper]
+  org: [paper]
+  openness: [hf]
+  license: [hf]
+  parameters: [paper]
+  variants: [hf]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: magistral
+name: Magistral
+org: mistral
+family: Magistral
+releaseDate: 2025-06-10
+type: reasoning
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Apache-2.0 (Magistral Small); Medium is API-only
+architecture: Decoder-only transformer trained with reinforcement learning
+parameters: {disclosed: true, total: 24e9}
+capabilities: [reasoning, multilingual chain-of-thought]
+summary: >-
+  Mistral's first reasoning models. Magistral Small (24B) is open, and Magistral Medium is available
+  through the API.
+variants:
+  - name: Magistral Small
+    parameters: {disclosed: true, total: 24e9}
+  - name: Magistral Medium
+links:
+  official: https://mistral.ai/news/magistral
+sources:
+  - id: blog
+    url: https://mistral.ai/news/magistral
+    title: Magistral
+    publisher: Mistral AI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  variants: [blog]
+status: draft
+updated: 2026-09-30

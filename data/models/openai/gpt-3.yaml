@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-3
+name: GPT-3
+org: openai
+family: GPT
+releaseDate: 2020-05-28
+type: llm
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 175e9}
+contextWindow: 2048
+capabilities: [text generation, few-shot learning]
+summary: >-
+  Scaled the GPT recipe to 175B parameters and showed strong few-shot learning from examples in the
+  prompt alone. Offered only through the OpenAI API.
+links:
+  paper: https://arxiv.org/abs/2005.14165
+  official: https://openai.com/index/openai-api/
+relations:
+  - target: gpt-2
+    type: successor-of
+sources:
+  - id: paper
+    url: https://arxiv.org/abs/2005.14165
+    title: Language Models are Few-Shot Learners
+    publisher: arXiv
+  - id: api
+    url: https://openai.com/index/openai-api/
+    title: OpenAI API
+    publisher: OpenAI
+citations:
+  releaseDate: [paper]
+  org: [paper]
+  openness: [api]
+  parameters: [paper]
+  contextWindow: [paper]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

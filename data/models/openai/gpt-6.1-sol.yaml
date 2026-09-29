@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-6.1-sol
+name: GPT-6.1 Sol
+org: openai
+family: GPT
+releaseDate: 2026-09-29
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [agentic coding, computer use, professional work]
+summary: >-
+  An upgrade to GPT-6 Sol that nearly matches GPT-6 Astra on agentic coding, computer use and
+  professional work, at one-fifth of Astra's token prices.
+links:
+  official: https://openai.com/index/introducing-gpt-6-1-sol/
+relations:
+  - target: gpt-6
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/introducing-gpt-6-1-sol/
+    title: Introducing GPT-6.1 Sol
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

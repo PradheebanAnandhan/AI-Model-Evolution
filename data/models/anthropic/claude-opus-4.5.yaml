@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-opus-4.5
+name: Claude Opus 4.5
+org: anthropic
+family: Claude
+releaseDate: 2025-11-24
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Hybrid reasoning model (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 200000
+capabilities: [agentic coding, computer use, long-horizon tasks]
+summary: >-
+  Anthropic's flagship at the end of 2025. It was released at a much lower price than earlier Opus
+  models and with an effort parameter to trade speed against depth.
+links:
+  official: https://www.anthropic.com/news/claude-opus-4-5
+relations:
+  - target: claude-opus-4.1
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-opus-4-5
+    title: Introducing Claude Opus 4.5
+    publisher: Anthropic
+  - id: models
+    url: https://docs.claude.com/en/docs/about-claude/models/overview
+    title: Models overview
+    publisher: Anthropic
+citations:
+  contextWindow: [models]
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

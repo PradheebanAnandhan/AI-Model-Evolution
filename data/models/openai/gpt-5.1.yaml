@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-5.1
+name: GPT-5.1
+org: openai
+family: GPT
+releaseDate: 2025-11-12
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, chat, adaptive thinking]
+summary: >-
+  An update to GPT-5 in Instant and Thinking versions. It adapts how long it thinks to each question
+  and follows instructions more closely.
+variants:
+  - name: GPT-5.1 Instant
+  - name: GPT-5.1 Thinking
+links:
+  official: https://openai.com/index/gpt-5-1/
+relations:
+  - target: gpt-5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/gpt-5-1/
+    title: "GPT-5.1: A smarter, more conversational ChatGPT"
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  variants: [blog]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: deepseek-llm
+name: DeepSeek LLM
+org: deepseek
+family: DeepSeek-V
+releaseDate: 2023-11-29
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: DeepSeek License
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 67e9}
+contextWindow: 4096
+capabilities: [text generation, chat, bilingual (English and Chinese)]
+summary: >-
+  Dense 7B and 67B models trained on 2T English and Chinese tokens, guided by the team's own
+  scaling-law study.
+variants:
+  - name: DeepSeek LLM 7B
+    parameters: {disclosed: true, total: 7e9}
+  - name: DeepSeek LLM 67B
+    parameters: {disclosed: true, total: 67e9}
+links:
+  paper: https://arxiv.org/abs/2401.02954
+  github: https://github.com/deepseek-ai/DeepSeek-LLM
+sources:
+  - id: gh
+    url: https://github.com/deepseek-ai/DeepSeek-LLM
+    title: DeepSeek-LLM repository
+    publisher: GitHub
+  - id: paper
+    url: https://arxiv.org/abs/2401.02954
+    title: "DeepSeek LLM: Scaling Open-Source Language Models with Longtermism"
+    publisher: arXiv
+citations:
+  releaseDate: [gh]
+  org: [gh]
+  openness: [gh]
+  license: [gh]
+  parameters: [gh]
+  variants: [gh]
+  contextWindow: [gh]
+  summary: [paper]
+status: draft
+updated: 2026-09-30

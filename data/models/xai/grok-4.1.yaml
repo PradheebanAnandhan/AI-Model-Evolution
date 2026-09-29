@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: grok-4.1
+name: Grok 4.1
+org: xai
+family: Grok
+releaseDate: 2025-11-17
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [chat, reasoning, tool use]
+summary: >-
+  An incremental update to Grok 4, released alongside the faster Grok 4.1 Fast.
+variants:
+  - name: Grok 4.1
+  - name: Grok 4.1 Fast
+relations:
+  - target: grok-4
+    type: successor-of
+sources:
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Grok_(chatbot)
+    title: Grok (chatbot)
+    publisher: Wikipedia
+    accessed: 2026-09-30
+citations:
+  releaseDate: [wiki]
+  org: [wiki]
+  openness: [wiki]
+  variants: [wiki]
+  summary: [wiki]
+status: draft
+updated: 2026-09-30

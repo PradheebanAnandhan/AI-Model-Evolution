@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: lamda
+name: LaMDA
+org: google
+family: LaMDA
+releaseDate: 2021-05-18
+type: llm
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 137e9}
+capabilities: [dialogue]
+summary: >-
+  A dialogue-specialized model announced at Google I/O 2021. It later powered the first version of
+  Bard.
+links:
+  paper: https://arxiv.org/abs/2201.08239
+  official: https://blog.google/technology/ai/lamda/
+sources:
+  - id: blog
+    url: https://blog.google/technology/ai/lamda/
+    title: "LaMDA: our breakthrough conversation technology"
+    publisher: Google
+  - id: paper
+    url: https://arxiv.org/abs/2201.08239
+    title: "LaMDA: Language Models for Dialog Applications"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  parameters: [paper]
+  architecture: [paper]
+status: draft
+updated: 2026-09-30

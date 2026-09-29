@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: sora-2
+name: Sora 2
+org: openai
+family: Sora
+releaseDate: 2025-09-30
+type: video
+modalities: {input: [text, image], output: [video, audio]}
+openness: closed
+architecture: Video generation model (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [text-to-video, synchronized audio, physics simulation]
+summary: >-
+  OpenAI's second video model. It generates synchronized dialogue and sound effects, models physics
+  more accurately, and launched alongside the Sora app.
+links:
+  official: https://openai.com/index/sora-2/
+relations:
+  - target: sora
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/sora-2/
+    title: Sora 2 is here
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  modalities: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

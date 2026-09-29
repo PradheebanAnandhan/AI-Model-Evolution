@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: falcon-40b
+name: Falcon-40B
+org: tii
+family: Falcon
+releaseDate: 2023-05
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Decoder-only transformer with multi-query attention
+parameters: {disclosed: true, total: 40e9}
+contextWindow: 2048
+capabilities: [text generation]
+summary: >-
+  Topped the Hugging Face Open LLM Leaderboard at launch. It was trained on 1T tokens of the
+  RefinedWeb dataset.
+variants:
+  - name: Falcon-7B
+    parameters: {disclosed: true, total: 7e9}
+  - name: Falcon-40B
+    parameters: {disclosed: true, total: 40e9}
+links:
+  huggingface: https://huggingface.co/tiiuae/falcon-40b
+sources:
+  - id: hf
+    url: https://huggingface.co/tiiuae/falcon-40b
+    title: tiiuae/falcon-40b model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [hf]
+  org: [hf]
+  openness: [hf]
+  license: [hf]
+  parameters: [hf]
+  contextWindow: [hf]
+  architecture: [hf]
+status: draft
+updated: 2026-09-30

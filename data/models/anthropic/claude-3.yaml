@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-3
+name: Claude 3
+org: anthropic
+family: Claude
+releaseDate: 2024-03-04
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 200000
+capabilities: [chat, reasoning, code, vision, multilingual]
+summary: >-
+  The first Claude generation offered in three tiers (Haiku, Sonnet, Opus) and the first with image
+  input. Opus led most of the benchmarks reported at launch.
+variants:
+  - name: Claude 3 Haiku
+  - name: Claude 3 Sonnet
+  - name: Claude 3 Opus
+links:
+  official: https://www.anthropic.com/news/claude-3-family
+relations:
+  - target: claude-2
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-3-family
+    title: Introducing the next generation of Claude
+    publisher: Anthropic
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  modalities: [blog]
+  contextWindow: [blog]
+  variants: [blog]
+status: draft
+updated: 2026-09-30

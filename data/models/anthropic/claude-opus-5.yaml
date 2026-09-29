@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-opus-5
+name: Claude Opus 5
+org: anthropic
+family: Claude
+releaseDate: 2026-07-24
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [agentic coding, enterprise work]
+summary: >-
+  Comes close to Claude Fable 5's intelligence at half the price. It more than doubled Opus 4.8's
+  score on Frontier-Bench v0.1.
+links:
+  official: https://www.anthropic.com/research/claude-opus-5
+relations:
+  - target: claude-opus-4.8
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/research/claude-opus-5
+    title: Introducing Claude Opus 5
+    publisher: Anthropic
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

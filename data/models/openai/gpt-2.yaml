@@ -1,0 +1,59 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-2
+name: GPT-2
+org: openai
+family: GPT
+releaseDate: 2019-02-14
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Modified MIT
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 1.5e9}
+contextWindow: 1024
+capabilities: [text generation, zero-shot task transfer]
+summary: >-
+  A 10x scale-up of GPT trained on WebText. OpenAI released it in stages over 2019, citing misuse
+  concerns, before publishing the full 1.5B weights in November.
+variants:
+  - name: GPT-2 Small
+    parameters: {disclosed: true, total: 124e6}
+  - name: GPT-2 Medium
+    parameters: {disclosed: true, total: 355e6}
+  - name: GPT-2 Large
+    parameters: {disclosed: true, total: 774e6}
+  - name: GPT-2 XL
+    parameters: {disclosed: true, total: 1.5e9}
+links:
+  paper: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
+  official: https://openai.com/index/better-language-models/
+  github: https://github.com/openai/gpt-2
+relations:
+  - target: gpt-1
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/better-language-models/
+    title: Better language models and their implications
+    publisher: OpenAI
+  - id: paper
+    url: https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
+    title: Language Models are Unsupervised Multitask Learners
+    publisher: OpenAI
+  - id: gh
+    url: https://github.com/openai/gpt-2
+    title: gpt-2 repository
+    publisher: GitHub
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [gh]
+  license: [gh]
+  parameters: [paper]
+  variants: [gh]
+  contextWindow: [paper]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

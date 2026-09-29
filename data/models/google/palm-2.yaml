@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: palm-2
+name: PaLM 2
+org: google
+family: PaLM
+releaseDate: 2023-05-10
+type: llm
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [multilingual, reasoning, code]
+summary: >-
+  Announced at Google I/O 2023 in four sizes, from Gecko to Unicorn. It powered Bard and more than
+  25 Google products.
+variants:
+  - name: Gecko
+  - name: Otter
+  - name: Bison
+  - name: Unicorn
+links:
+  paper: https://arxiv.org/abs/2305.10403
+  official: https://blog.google/technology/ai/google-palm-2-ai-large-language-model/
+relations:
+  - target: palm
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.google/technology/ai/google-palm-2-ai-large-language-model/
+    title: Introducing PaLM 2
+    publisher: Google
+  - id: report
+    url: https://arxiv.org/abs/2305.10403
+    title: PaLM 2 Technical Report
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  variants: [blog]
+  relations: [report]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

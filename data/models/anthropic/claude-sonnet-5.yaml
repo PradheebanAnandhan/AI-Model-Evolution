@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-sonnet-5
+name: Claude Sonnet 5
+org: anthropic
+family: Claude
+releaseDate: 2026-06-30
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [agentic coding, tool use, knowledge work]
+summary: >-
+  A Sonnet built for agentic coding, tool use and knowledge work. It hallucinates less, is less
+  sycophantic, and resists prompt injection better than Sonnet 4.6.
+links:
+  official: https://www.anthropic.com/news/claude-sonnet-5
+relations:
+  - target: claude-sonnet-4.6
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-sonnet-5
+    title: Introducing Claude Sonnet 5
+    publisher: Anthropic
+  - id: card
+    url: https://www-cdn.anthropic.com/480e0bb54327b9622282e9c39a83a4f490ed377e/Claude%20Sonnet%205%20System%20Card.pdf
+    title: "System Card: Claude Sonnet 5"
+    publisher: Anthropic
+citations:
+  releaseDate: [blog, card]
+  org: [blog]
+  openness: [blog]
+  summary: [card]
+status: draft
+updated: 2026-09-30

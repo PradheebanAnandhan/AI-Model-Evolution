@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: deepseek-v3.2-exp
+name: DeepSeek-V3.2-Exp
+org: deepseek
+family: DeepSeek-V
+releaseDate: 2025-09-29
+type: reasoning
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: MIT
+architecture: Mixture-of-experts transformer with DeepSeek Sparse Attention
+parameters: {disclosed: true, total: 671e9, active: 37e9}
+contextWindow: 128000
+capabilities: [long-context efficiency, hybrid thinking]
+summary: >-
+  An experimental model built on V3.1-Terminus that introduced DeepSeek Sparse Attention for cheaper
+  long-context training and inference.
+links:
+  huggingface: https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp
+relations:
+  - target: deepseek-v3.1
+    type: successor-of
+sources:
+  - id: hf
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp
+    title: deepseek-ai/DeepSeek-V3.2-Exp model card
+    publisher: Hugging Face
+citations:
+  contextWindow: [hf]
+  releaseDate: [hf]
+  org: [hf]
+  openness: [hf]
+  license: [hf]
+  parameters: [hf]
+  architecture: [hf]
+  relations: [hf]
+status: draft
+updated: 2026-09-30

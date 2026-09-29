@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: bert
+name: BERT
+org: google
+family: BERT
+releaseDate: 2018-10-11
+type: embedding
+modalities: {input: [text], output: [text]}
+openness: open-source
+license: Apache-2.0
+architecture: Encoder-only transformer
+parameters: {disclosed: true, total: 340e6}
+contextWindow: 512
+capabilities: [text classification, question answering, text representations]
+summary: >-
+  Bidirectional pre-training with masked language modeling. Fine-tuned BERT set new records on 11
+  NLP tasks and became the standard text encoder for years.
+variants:
+  - name: BERT-Base
+    parameters: {disclosed: true, total: 110e6}
+  - name: BERT-Large
+    parameters: {disclosed: true, total: 340e6}
+links:
+  paper: https://arxiv.org/abs/1810.04805
+  github: https://github.com/google-research/bert
+relations:
+  - target: transformer
+    type: inspired-by
+sources:
+  - id: paper
+    url: https://arxiv.org/abs/1810.04805
+    title: "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding"
+    publisher: arXiv
+  - id: gh
+    url: https://github.com/google-research/bert
+    title: bert repository
+    publisher: GitHub
+citations:
+  releaseDate: [paper]
+  org: [paper]
+  openness: [gh]
+  license: [gh]
+  parameters: [paper]
+  variants: [paper]
+  contextWindow: [gh]
+  architecture: [paper]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

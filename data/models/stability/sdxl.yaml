@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: sdxl
+name: Stable Diffusion XL
+aliases: [SDXL 1.0]
+org: stability
+family: Stable Diffusion
+releaseDate: 2023-07-26
+type: image
+modalities: {input: [text, image], output: [image]}
+openness: open-weights
+license: CreativeML OpenRAIL++-M
+architecture: Latent diffusion with a 3x larger U-Net and a refiner model
+parameters: {disclosed: true, total: 3.5e9}
+capabilities: [text-to-image, high-resolution generation]
+summary: >-
+  A 3.5B-parameter base model plus a refiner (6.6B in total) that generates 1024x1024 images.
+variants:
+  - name: SDXL base
+    parameters: {disclosed: true, total: 3.5e9}
+  - name: SDXL base + refiner
+    parameters: {disclosed: true, total: 6.6e9}
+    notes: Ensemble pipeline.
+links:
+  paper: https://arxiv.org/abs/2307.01952
+  official: https://stability.ai/news/stable-diffusion-sdxl-1-announcement
+relations:
+  - target: stable-diffusion
+    type: successor-of
+sources:
+  - id: blog
+    url: https://stability.ai/news/stable-diffusion-sdxl-1-announcement
+    title: Announcing SDXL 1.0
+    publisher: Stability AI
+  - id: paper
+    url: https://arxiv.org/abs/2307.01952
+    title: "SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  variants: [blog]
+  architecture: [paper]
+status: draft
+updated: 2026-09-30

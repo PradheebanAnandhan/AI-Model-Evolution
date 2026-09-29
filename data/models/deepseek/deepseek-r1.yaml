@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: deepseek-r1
+name: DeepSeek-R1
+org: deepseek
+family: DeepSeek-R
+releaseDate: 2025-01-20
+type: reasoning
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: MIT
+architecture: Mixture-of-experts transformer
+parameters: {disclosed: true, total: 671e9, active: 37e9}
+contextWindow: 128000
+capabilities: [reasoning, math, code, chain-of-thought]
+summary: >-
+  An open-weight reasoning model trained with large-scale reinforcement learning on top of
+  DeepSeek-V3-Base. It matched OpenAI o1 on math and code benchmarks under an MIT license.
+variants:
+  - name: DeepSeek-R1-Zero
+    parameters: {disclosed: true, total: 671e9, active: 37e9}
+    notes: Pure RL, no supervised warm-up.
+  - name: DeepSeek-R1
+    parameters: {disclosed: true, total: 671e9, active: 37e9}
+links:
+  paper: https://arxiv.org/abs/2501.12948
+  github: https://github.com/deepseek-ai/DeepSeek-R1
+  huggingface: https://huggingface.co/deepseek-ai/DeepSeek-R1
+relations:
+  - target: deepseek-v3
+    type: derived-from
+    note: Trained from DeepSeek-V3-Base.
+sources:
+  - id: gh
+    url: https://github.com/deepseek-ai/DeepSeek-R1
+    title: DeepSeek-R1 repository
+    publisher: GitHub
+  - id: paper
+    url: https://arxiv.org/abs/2501.12948
+    title: "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning"
+    publisher: arXiv
+citations:
+  releaseDate: [gh]
+  org: [gh]
+  openness: [gh]
+  license: [gh]
+  parameters: [gh]
+  contextWindow: [gh]
+  variants: [paper]
+  relations: [paper]
+  capabilities: [paper]
+status: draft
+updated: 2026-09-30

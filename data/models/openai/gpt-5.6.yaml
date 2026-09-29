@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-5.6
+name: GPT-5.6
+org: openai
+family: GPT
+releaseDate: 2026-07-09
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, coding, agents]
+summary: >-
+  A family in three tiers: Sol (flagship), Terra (balanced) and Luna (fast and affordable). A
+  limited partner preview began on June 26, 2026, ahead of general release.
+variants:
+  - name: GPT-5.6 Sol
+  - name: GPT-5.6 Terra
+  - name: GPT-5.6 Luna
+links:
+  official: https://openai.com/index/gpt-5-6/
+relations:
+  - target: gpt-5.5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/gpt-5-6/
+    title: "GPT-5.6: Frontier intelligence that scales with your ambition"
+    publisher: OpenAI
+  - id: preview
+    url: https://openai.com/index/previewing-gpt-5-6-sol/
+    title: "Previewing GPT-5.6 Sol: a next-generation model"
+    publisher: OpenAI
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/GPT-5.6
+    title: GPT-5.6
+    publisher: Wikipedia
+citations:
+  releaseDate: [wiki]
+  org: [blog]
+  openness: [blog]
+  variants: [blog, wiki]
+  summary: [preview, wiki]
+status: draft
+updated: 2026-09-30

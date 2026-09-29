@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: veo-3
+name: Veo 3
+org: google
+family: Veo
+releaseDate: 2025-05-20
+type: video
+modalities: {input: [text, image], output: [video, audio]}
+openness: closed
+architecture: Video generation model (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [text-to-video, native audio generation]
+summary: >-
+  Generates video together with synchronized sound effects, ambient noise and dialogue. Announced at
+  Google I/O 2025.
+links:
+  official: https://blog.google/technology/ai/generative-media-models-io-2025/
+relations:
+  - target: veo
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.google/technology/ai/generative-media-models-io-2025/
+    title: Fuel your creativity with new generative media models and tools
+    publisher: Google
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  modalities: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

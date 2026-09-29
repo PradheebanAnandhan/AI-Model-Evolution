@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemini-3
+name: Gemini 3
+org: google
+family: Gemini
+releaseDate: 2025-11-18
+type: reasoning
+modalities: {input: [text, image, audio, video], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, agentic coding, multimodal understanding]
+summary: >-
+  Gemini 3 Pro launched in the Gemini app and Search on its first day. Gemini 3 Deep Think and the
+  faster Gemini 3 Flash followed in December 2025.
+variants:
+  - name: Gemini 3 Pro
+  - name: Gemini 3 Deep Think
+    notes: December 3, 2025.
+  - name: Gemini 3 Flash
+    notes: December 17, 2025.
+links:
+  official: https://blog.google/products/gemini/gemini-3/
+relations:
+  - target: gemini-2.5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.google/products/gemini/gemini-3/
+    title: A new era of intelligence with Gemini 3
+    publisher: Google
+  - id: wiki
+    url: https://en.wikipedia.org/wiki/Gemini_(language_model)
+    title: Gemini (language model)
+    publisher: Wikipedia
+    accessed: 2026-09-30
+citations:
+  releaseDate: [blog, wiki]
+  org: [blog]
+  openness: [blog]
+  capabilities: [blog]
+  variants: [wiki]
+status: draft
+updated: 2026-09-30

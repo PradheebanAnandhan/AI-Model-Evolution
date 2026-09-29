@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gpt-4o
+name: GPT-4o
+aliases: [omni]
+org: openai
+family: GPT
+releaseDate: 2024-05-13
+type: multimodal
+modalities: {input: [text, image, audio], output: [text, audio]}
+openness: closed
+architecture: Single end-to-end model across text, vision and audio
+parameters: {disclosed: false}
+contextWindow: 128000
+capabilities: [chat, real-time voice, vision, multilingual]
+summary: >-
+  One model trained end to end across text, vision and audio, answering speech in about 320 ms on
+  average. It matched GPT-4 Turbo on text at half the API price.
+variants:
+  - name: GPT-4o
+  - name: GPT-4o mini
+    notes: Released July 2024.
+links:
+  official: https://openai.com/index/hello-gpt-4o/
+relations:
+  - target: gpt-4-turbo
+    type: successor-of
+sources:
+  - id: blog
+    url: https://openai.com/index/hello-gpt-4o/
+    title: Hello GPT-4o
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  modalities: [blog]
+  architecture: [blog]
+  contextWindow: [blog]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

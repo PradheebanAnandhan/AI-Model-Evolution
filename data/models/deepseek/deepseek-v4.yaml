@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: deepseek-v4
+name: DeepSeek-V4
+org: deepseek
+family: DeepSeek-V
+releaseDate: 2026-04-24
+type: reasoning
+modalities: {input: [text], output: [text]}
+openness: open-weights
+architecture: Mixture-of-experts transformer
+parameters: {disclosed: true, total: 1.6e12, active: 49e9}
+contextWindow: 1000000
+capabilities: [long context, agents, coding]
+summary: >-
+  Released as a preview with open weights in two sizes, making a 1M-token context the default across
+  DeepSeek's services. V4-Flash became official on July 31 and V4-Pro on August 13, 2026.
+variants:
+  - name: DeepSeek-V4-Pro
+    parameters: {disclosed: true, total: 1.6e12, active: 49e9}
+  - name: DeepSeek-V4-Flash
+    parameters: {disclosed: true, total: 284e9, active: 13e9}
+links:
+  official: https://api-docs.deepseek.com/news/news260424/
+  huggingface: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+relations:
+  - target: deepseek-v3.2-exp
+    type: successor-of
+sources:
+  - id: news
+    url: https://api-docs.deepseek.com/news/news260424/
+    title: DeepSeek V4 Preview Release
+    publisher: DeepSeek
+    accessed: 2026-09-30
+  - id: hf
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+    title: deepseek-ai/DeepSeek-V4-Pro model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [news]
+  org: [news]
+  openness: [news]
+  parameters: [news]
+  variants: [news]
+  contextWindow: [news]
+  summary: [news, hf]
+status: draft
+updated: 2026-09-30

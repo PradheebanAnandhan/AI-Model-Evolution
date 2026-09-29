@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: llama
+name: LLaMA
+aliases: [LLaMA 1, Llama 1]
+org: meta
+family: Llama
+releaseDate: 2023-02-24
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Non-commercial research license
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 65.2e9}
+contextWindow: 2048
+capabilities: [text generation]
+summary: >-
+  Foundation models trained only on publicly available data. The 13B model outperformed GPT-3 on
+  most benchmarks, and the weights, released to researchers, started the wave of open-weight
+  fine-tunes.
+variants:
+  - name: LLaMA 7B
+    parameters: {disclosed: true, total: 6.7e9}
+  - name: LLaMA 13B
+    parameters: {disclosed: true, total: 13e9}
+  - name: LLaMA 33B
+    parameters: {disclosed: true, total: 32.5e9}
+  - name: LLaMA 65B
+    parameters: {disclosed: true, total: 65.2e9}
+links:
+  paper: https://arxiv.org/abs/2302.13971
+  official: https://ai.meta.com/blog/large-language-model-llama-meta-ai/
+  github: https://github.com/meta-llama/llama
+sources:
+  - id: blog
+    url: https://ai.meta.com/blog/large-language-model-llama-meta-ai/
+    title: "Introducing LLaMA: A foundational, 65-billion-parameter large language model"
+    publisher: Meta AI
+  - id: paper
+    url: https://arxiv.org/abs/2302.13971
+    title: "LLaMA: Open and Efficient Foundation Language Models"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [paper]
+  variants: [paper]
+  contextWindow: [paper]
+  architecture: [paper]
+  summary: [paper]
+status: draft
+updated: 2026-09-30

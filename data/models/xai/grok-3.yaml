@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: grok-3
+name: Grok 3
+org: xai
+family: Grok
+releaseDate: 2025-02
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [reasoning, Think mode, DeepSearch]
+summary: >-
+  Trained on the Colossus supercluster with about 10x the compute of earlier Grok models. It added a
+  reasoning mode (Think).
+variants:
+  - name: Grok 3
+  - name: Grok 3 mini
+links:
+  official: https://x.ai/news/grok-3
+relations:
+  - target: grok-2
+    type: successor-of
+sources:
+  - id: blog
+    url: https://x.ai/news/grok-3
+    title: Grok 3 Beta — The Age of Reasoning Agents
+    publisher: xAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  capabilities: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemma-3
+name: Gemma 3
+org: google
+family: Gemma
+releaseDate: 2025-03-12
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: open-weights
+license: Gemma Terms of Use
+architecture: Decoder-only transformer with a vision encoder
+parameters: {disclosed: true, total: 27e9}
+contextWindow: 128000
+capabilities: [vision, multilingual, function calling]
+summary: >-
+  Open models from 1B to 27B with a 128K context window (32K for 1B), support for more than 140
+  languages, and image input.
+variants:
+  - name: Gemma 3 1B
+    parameters: {disclosed: true, total: 1e9}
+  - name: Gemma 3 4B
+    parameters: {disclosed: true, total: 4e9}
+  - name: Gemma 3 12B
+    parameters: {disclosed: true, total: 12e9}
+  - name: Gemma 3 27B
+    parameters: {disclosed: true, total: 27e9}
+links:
+  official: https://blog.google/technology/developers/gemma-3/
+relations:
+  - target: gemma-2
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.google/technology/developers/gemma-3/
+    title: Introducing Gemma 3
+    publisher: Google
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  variants: [blog]
+  contextWindow: [blog]
+  modalities: [blog]
+status: draft
+updated: 2026-09-30

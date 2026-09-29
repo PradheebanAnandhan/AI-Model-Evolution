@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: llama-3
+name: Llama 3
+org: meta
+family: Llama
+releaseDate: 2024-04-18
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Meta Llama 3 Community License
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 70e9}
+contextWindow: 8192
+capabilities: [text generation, chat, code]
+summary: >-
+  Trained on more than 15T tokens with a new 128K-token tokenizer. Llama 3 8B and 70B were the
+  strongest open models of their size at release.
+variants:
+  - name: Llama 3 8B
+    parameters: {disclosed: true, total: 8e9}
+  - name: Llama 3 70B
+    parameters: {disclosed: true, total: 70e9}
+links:
+  official: https://ai.meta.com/blog/meta-llama-3/
+  github: https://github.com/meta-llama/llama3
+relations:
+  - target: llama-2
+    type: successor-of
+sources:
+  - id: blog
+    url: https://ai.meta.com/blog/meta-llama-3/
+    title: "Introducing Meta Llama 3: The most capable openly available LLM to date"
+    publisher: Meta AI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  variants: [blog]
+  contextWindow: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

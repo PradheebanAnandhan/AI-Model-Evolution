@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: grok-2
+name: Grok-2
+org: xai
+family: Grok
+releaseDate: 2024-08-13
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [chat, vision, code]
+summary: >-
+  A frontier-class upgrade released in full and mini versions, with image understanding.
+variants:
+  - name: Grok-2
+  - name: Grok-2 mini
+links:
+  official: https://x.ai/news/grok-2
+relations:
+  - target: grok-1.5
+    type: successor-of
+sources:
+  - id: blog
+    url: https://x.ai/news/grok-2
+    title: Grok-2 Beta Release
+    publisher: xAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  variants: [blog]
+status: draft
+updated: 2026-09-30

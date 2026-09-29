@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-sonnet-4.5
+name: Claude Sonnet 4.5
+org: anthropic
+family: Claude
+releaseDate: 2025-09-29
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Hybrid reasoning model (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 200000
+capabilities: [agentic coding, computer use, long-running agents]
+summary: >-
+  Released with the Claude Agent SDK. Anthropic reported it could keep working autonomously on
+  complex tasks for more than 30 hours.
+links:
+  official: https://www.anthropic.com/news/claude-sonnet-4-5
+relations:
+  - target: claude-4
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-sonnet-4-5
+    title: Introducing Claude Sonnet 4.5
+    publisher: Anthropic
+  - id: models
+    url: https://docs.claude.com/en/docs/about-claude/models/overview
+    title: Models overview
+    publisher: Anthropic
+citations:
+  contextWindow: [models]
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  capabilities: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

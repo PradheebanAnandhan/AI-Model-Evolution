@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: transformer
+name: Transformer
+aliases: [Attention Is All You Need]
+org: google
+family: Transformer
+releaseDate: 2017-06-12
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-source
+license: Apache-2.0 (Tensor2Tensor)
+architecture: Encoder-decoder transformer
+parameters: {disclosed: true, total: 213e6}
+capabilities: [machine translation, constituency parsing]
+summary: >-
+  The architecture behind almost every model on this map. It replaced recurrence with self-attention
+  and set a new state of the art in English-German and English-French translation.
+variants:
+  - name: Transformer (base)
+    parameters: {disclosed: true, total: 65e6}
+  - name: Transformer (big)
+    parameters: {disclosed: true, total: 213e6}
+links:
+  paper: https://arxiv.org/abs/1706.03762
+  github: https://github.com/tensorflow/tensor2tensor
+sources:
+  - id: paper
+    url: https://arxiv.org/abs/1706.03762
+    title: Attention Is All You Need
+    publisher: arXiv
+  - id: t2t
+    url: https://github.com/tensorflow/tensor2tensor
+    title: Tensor2Tensor repository
+    publisher: GitHub
+citations:
+  releaseDate: [paper]
+  org: [paper]
+  openness: [t2t]
+  license: [t2t]
+  parameters: [paper]
+  variants: [paper]
+  architecture: [paper]
+  capabilities: [paper]
+status: draft
+updated: 2026-09-30

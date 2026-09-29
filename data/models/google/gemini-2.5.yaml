@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemini-2.5
+name: Gemini 2.5
+org: google
+family: Gemini
+releaseDate: 2025-03-25
+type: reasoning
+modalities: {input: [text, image, audio, video], output: [text]}
+openness: closed
+architecture: Transformer with built-in thinking (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 1000000
+capabilities: [reasoning, code, long context]
+summary: >-
+  Google's first thinking model family. 2.5 Pro debuted at the top of the LMArena leaderboard.
+variants:
+  - name: Gemini 2.5 Pro
+  - name: Gemini 2.5 Flash
+  - name: Gemini 2.5 Flash-Lite
+links:
+  official: https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/
+relations:
+  - target: gemini-2.0
+    type: successor-of
+sources:
+  - id: blog
+    url: https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/
+    title: "Gemini 2.5: Our most intelligent AI model"
+    publisher: Google
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  contextWindow: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

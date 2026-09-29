@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: code-llama
+name: Code Llama
+org: meta
+family: Llama
+releaseDate: 2023-08-24
+type: code
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Llama 2 Community License
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 34e9}
+capabilities: [code generation, code infilling, long context]
+summary: >-
+  Llama 2 further trained on code, with Python and Instruct versions. It generates stably with up to
+  100K tokens of context.
+variants:
+  - name: Code Llama 7B
+    parameters: {disclosed: true, total: 7e9}
+  - name: Code Llama 13B
+    parameters: {disclosed: true, total: 13e9}
+  - name: Code Llama 34B
+    parameters: {disclosed: true, total: 34e9}
+  - name: Code Llama 70B
+    parameters: {disclosed: true, total: 70e9}
+    notes: Released January 2024.
+links:
+  paper: https://arxiv.org/abs/2308.12950
+  official: https://ai.meta.com/blog/code-llama-large-language-model-coding/
+relations:
+  - target: llama-2
+    type: derived-from
+sources:
+  - id: blog
+    url: https://ai.meta.com/blog/code-llama-large-language-model-coding/
+    title: Introducing Code Llama, a state-of-the-art large language model for coding
+    publisher: Meta AI
+  - id: paper
+    url: https://arxiv.org/abs/2308.12950
+    title: "Code Llama: Open Foundation Models for Code"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [paper]
+  variants: [paper, blog]
+  relations: [paper]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

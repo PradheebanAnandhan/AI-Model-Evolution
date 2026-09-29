@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: gemma
+name: Gemma
+org: google
+family: Gemma
+releaseDate: 2024-02-21
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Gemma Terms of Use
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 7e9}
+contextWindow: 8192
+capabilities: [text generation, chat]
+summary: >-
+  Lightweight open-weight models built from the research and technology used to create Gemini.
+variants:
+  - name: Gemma 2B
+    parameters: {disclosed: true, total: 2e9}
+  - name: Gemma 7B
+    parameters: {disclosed: true, total: 7e9}
+links:
+  paper: https://arxiv.org/abs/2403.08295
+  official: https://blog.google/technology/developers/gemma-open-models/
+relations:
+  - target: gemini-1
+    type: inspired-by
+sources:
+  - id: blog
+    url: https://blog.google/technology/developers/gemma-open-models/
+    title: "Gemma: Introducing new state-of-the-art open models"
+    publisher: Google
+  - id: report
+    url: https://arxiv.org/abs/2403.08295
+    title: "Gemma: Open Models Based on Gemini Research and Technology"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [report]
+  variants: [blog]
+  contextWindow: [report]
+  relations: [blog]
+status: draft
+updated: 2026-09-30

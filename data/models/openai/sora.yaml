@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: sora
+name: Sora
+org: openai
+family: Sora
+releaseDate: 2024-02-15
+type: video
+modalities: {input: [text, image], output: [video]}
+openness: closed
+architecture: Diffusion transformer over spacetime patches
+parameters: {disclosed: false}
+capabilities: [text-to-video, image-to-video]
+summary: >-
+  A text-to-video model that generates up to a minute of video. It was previewed in February 2024
+  and opened to ChatGPT users that December.
+links:
+  official: https://openai.com/index/sora/
+sources:
+  - id: blog
+    url: https://openai.com/index/sora/
+    title: Creating video from text
+    publisher: OpenAI
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  architecture: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

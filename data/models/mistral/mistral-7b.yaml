@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: mistral-7b
+name: Mistral 7B
+org: mistral
+family: Mistral
+releaseDate: 2023-09-27
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Decoder-only transformer with grouped-query and sliding-window attention
+parameters: {disclosed: true, total: 7.3e9}
+capabilities: [text generation, code]
+summary: >-
+  Mistral AI's first model. It outperformed Llama 2 13B on every benchmark reported at release and
+  shipped under Apache 2.0.
+links:
+  paper: https://arxiv.org/abs/2310.06825
+  official: https://mistral.ai/news/announcing-mistral-7b
+sources:
+  - id: blog
+    url: https://mistral.ai/news/announcing-mistral-7b
+    title: Mistral 7B
+    publisher: Mistral AI
+  - id: paper
+    url: https://arxiv.org/abs/2310.06825
+    title: Mistral 7B
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  architecture: [paper]
+  summary: [blog]
+status: draft
+updated: 2026-09-30

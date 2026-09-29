@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: veo
+name: Veo
+org: google
+family: Veo
+releaseDate: 2024-05-14
+type: video
+modalities: {input: [text, image], output: [video]}
+openness: closed
+architecture: Video generation model (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [text-to-video]
+summary: >-
+  Google DeepMind's first high-definition video model, announced at I/O 2024. It generates 1080p
+  clips longer than a minute.
+links:
+  official: https://blog.google/technology/ai/google-generative-ai-veo-imagen-3/
+sources:
+  - id: blog
+    url: https://blog.google/technology/ai/google-generative-ai-veo-imagen-3/
+    title: "Veo and Imagen 3: Announcing new video and image generation models"
+    publisher: Google
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

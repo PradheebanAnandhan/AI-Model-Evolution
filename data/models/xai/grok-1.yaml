@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: grok-1
+name: Grok-1
+org: xai
+family: Grok
+releaseDate: 2023-11
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Mixture-of-experts transformer
+parameters: {disclosed: true, total: 314e9}
+capabilities: [chat, real-time X data]
+summary: >-
+  xAI's first model, launched in X Premium+. Its 314B-parameter mixture-of-experts base weights were
+  released under Apache 2.0 in March 2024.
+links:
+  official: https://x.ai/news/grok
+  github: https://github.com/xai-org/grok-1
+sources:
+  - id: blog
+    url: https://x.ai/news/grok
+    title: Announcing Grok
+    publisher: xAI
+  - id: os
+    url: https://x.ai/news/grok-os
+    title: Open Release of Grok-1
+    publisher: xAI
+  - id: gh
+    url: https://github.com/xai-org/grok-1
+    title: grok-1 repository
+    publisher: GitHub
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [os]
+  license: [gh]
+  parameters: [os]
+  architecture: [os]
+status: draft
+updated: 2026-09-30

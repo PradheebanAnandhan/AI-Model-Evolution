@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: deepseek-v3
+name: DeepSeek-V3
+org: deepseek
+family: DeepSeek-V
+releaseDate: 2024-12-26
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: DeepSeek License (code MIT)
+architecture: Mixture-of-experts transformer with MLA and multi-token prediction
+parameters: {disclosed: true, total: 671e9, active: 37e9}
+contextWindow: 128000
+capabilities: [text generation, code, math]
+summary: >-
+  A 671B-parameter mixture-of-experts model trained in FP8 for about 2.8M H800 GPU hours. It rivaled
+  leading closed models at a fraction of their reported training cost.
+links:
+  paper: https://arxiv.org/abs/2412.19437
+  github: https://github.com/deepseek-ai/DeepSeek-V3
+  huggingface: https://huggingface.co/deepseek-ai/DeepSeek-V3
+relations:
+  - target: deepseek-v2
+    type: successor-of
+sources:
+  - id: gh
+    url: https://github.com/deepseek-ai/DeepSeek-V3
+    title: DeepSeek-V3 repository
+    publisher: GitHub
+  - id: paper
+    url: https://arxiv.org/abs/2412.19437
+    title: DeepSeek-V3 Technical Report
+    publisher: arXiv
+citations:
+  releaseDate: [gh]
+  org: [gh]
+  openness: [gh]
+  license: [gh]
+  parameters: [paper]
+  contextWindow: [gh]
+  architecture: [paper]
+  summary: [paper]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

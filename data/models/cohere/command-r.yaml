@@ -1,0 +1,41 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: command-r
+name: Command R
+org: cohere
+family: Command
+releaseDate: 2024-03-11
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: CC-BY-NC-4.0
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 35e9}
+contextWindow: 128000
+capabilities: [retrieval-augmented generation, tool use, multilingual]
+summary: >-
+  A model optimized for retrieval-augmented generation and tool use in enterprise settings, with
+  weights released for non-commercial use.
+links:
+  official: https://cohere.com/blog/command-r
+  huggingface: https://huggingface.co/CohereForAI/c4ai-command-r-v01
+sources:
+  - id: blog
+    url: https://cohere.com/blog/command-r
+    title: "Command R: Retrieval-Augmented Generation at Production Scale"
+    publisher: Cohere
+  - id: hf
+    url: https://huggingface.co/CohereForAI/c4ai-command-r-v01
+    title: CohereForAI/c4ai-command-r-v01 model card
+    publisher: Hugging Face
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [hf]
+  license: [hf]
+  parameters: [hf]
+  contextWindow: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

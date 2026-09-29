@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-1
+name: Claude
+aliases: [Claude 1]
+org: anthropic
+family: Claude
+releaseDate: 2023-03-14
+type: llm
+modalities: {input: [text], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+capabilities: [chat, summarization, writing, code]
+summary: >-
+  Anthropic's first publicly available assistant, trained with Constitutional AI. It was offered as
+  Claude and the faster, cheaper Claude Instant.
+variants:
+  - name: Claude
+  - name: Claude Instant
+links:
+  official: https://www.anthropic.com/news/introducing-claude
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/introducing-claude
+    title: Introducing Claude
+    publisher: Anthropic
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  variants: [blog]
+  capabilities: [blog]
+status: draft
+updated: 2026-09-30

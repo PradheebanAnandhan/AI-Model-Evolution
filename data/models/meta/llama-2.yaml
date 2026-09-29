@@ -1,0 +1,54 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: llama-2
+name: Llama 2
+org: meta
+family: Llama
+releaseDate: 2023-07-18
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Llama 2 Community License
+architecture: Decoder-only transformer
+parameters: {disclosed: true, total: 70e9}
+contextWindow: 4096
+capabilities: [text generation, chat]
+summary: >-
+  LLaMA's successor, released for commercial use. It was trained on 40% more data with double the
+  context length, and came with RLHF-tuned Llama 2-Chat models.
+variants:
+  - name: Llama 2 7B
+    parameters: {disclosed: true, total: 7e9}
+  - name: Llama 2 13B
+    parameters: {disclosed: true, total: 13e9}
+  - name: Llama 2 70B
+    parameters: {disclosed: true, total: 70e9}
+links:
+  paper: https://arxiv.org/abs/2307.09288
+  official: https://ai.meta.com/blog/llama-2/
+  huggingface: https://huggingface.co/meta-llama/Llama-2-70b-hf
+relations:
+  - target: llama
+    type: successor-of
+sources:
+  - id: blog
+    url: https://ai.meta.com/blog/llama-2/
+    title: Meta and Microsoft Introduce the Next Generation of Llama
+    publisher: Meta AI
+  - id: paper
+    url: https://arxiv.org/abs/2307.09288
+    title: "Llama 2: Open Foundation and Fine-Tuned Chat Models"
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [paper]
+  variants: [paper]
+  contextWindow: [paper]
+  relations: [paper]
+  summary: [paper]
+status: draft
+updated: 2026-09-30

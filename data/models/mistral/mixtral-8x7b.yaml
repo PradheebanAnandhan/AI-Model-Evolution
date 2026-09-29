@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: mixtral-8x7b
+name: Mixtral 8x7B
+org: mistral
+family: Mixtral
+releaseDate: 2023-12-11
+type: llm
+modalities: {input: [text], output: [text]}
+openness: open-weights
+license: Apache-2.0
+architecture: Sparse mixture-of-experts transformer (8 experts, 2 active per token)
+parameters: {disclosed: true, total: 46.7e9, active: 12.9e9}
+contextWindow: 32000
+capabilities: [text generation, code, multilingual]
+summary: >-
+  An open sparse mixture-of-experts model that matched or beat Llama 2 70B and GPT-3.5 on most
+  benchmarks, with 6x faster inference than Llama 2 70B.
+links:
+  paper: https://arxiv.org/abs/2401.04088
+  official: https://mistral.ai/news/mixtral-of-experts
+relations:
+  - target: mistral-7b
+    type: inspired-by
+    note: Same architecture, with 8 feed-forward experts per layer.
+sources:
+  - id: blog
+    url: https://mistral.ai/news/mixtral-of-experts
+    title: Mixtral of experts
+    publisher: Mistral AI
+  - id: paper
+    url: https://arxiv.org/abs/2401.04088
+    title: Mixtral of Experts
+    publisher: arXiv
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  license: [blog]
+  parameters: [blog]
+  contextWindow: [blog]
+  architecture: [paper]
+  relations: [paper]
+status: draft
+updated: 2026-09-30

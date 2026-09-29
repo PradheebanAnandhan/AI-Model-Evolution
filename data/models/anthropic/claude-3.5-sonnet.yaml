@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-3.5-sonnet
+name: Claude 3.5 Sonnet
+org: anthropic
+family: Claude
+releaseDate: 2024-06-20
+type: multimodal
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Transformer (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 200000
+capabilities: [code, vision, computer use, Artifacts]
+summary: >-
+  Outperformed Claude 3 Opus at the speed and price of a mid-tier model. The October 2024 upgrade
+  added computer use (beta) alongside Claude 3.5 Haiku.
+variants:
+  - name: Claude 3.5 Sonnet
+  - name: Claude 3.5 Sonnet (new)
+    notes: October 2024, with computer use.
+  - name: Claude 3.5 Haiku
+    notes: October 2024.
+links:
+  official: https://www.anthropic.com/news/claude-3-5-sonnet
+relations:
+  - target: claude-3
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-3-5-sonnet
+    title: Introducing Claude 3.5 Sonnet
+    publisher: Anthropic
+  - id: oct
+    url: https://www.anthropic.com/news/3-5-models-and-computer-use
+    title: Introducing computer use, a new Claude 3.5 Sonnet, and Claude 3.5 Haiku
+    publisher: Anthropic
+citations:
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  contextWindow: [blog]
+  variants: [blog, oct]
+  capabilities: [blog, oct]
+status: draft
+updated: 2026-09-30

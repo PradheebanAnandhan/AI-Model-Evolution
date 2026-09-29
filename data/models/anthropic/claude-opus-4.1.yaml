@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=../../../schema/model.schema.json
+# Draft compiled by an AI assistant from the primary sources below; awaiting human review.
+
+id: claude-opus-4.1
+name: Claude Opus 4.1
+org: anthropic
+family: Claude
+releaseDate: 2025-08-05
+type: reasoning
+modalities: {input: [text, image], output: [text]}
+openness: closed
+architecture: Hybrid reasoning model (details undisclosed)
+parameters: {disclosed: false}
+contextWindow: 200000
+capabilities: [agentic coding, reasoning]
+summary: >-
+  An upgrade to Claude Opus 4 focused on agentic tasks, real-world coding and reasoning.
+links:
+  official: https://www.anthropic.com/news/claude-opus-4-1
+relations:
+  - target: claude-4
+    type: successor-of
+sources:
+  - id: blog
+    url: https://www.anthropic.com/news/claude-opus-4-1
+    title: Claude Opus 4.1
+    publisher: Anthropic
+  - id: models
+    url: https://docs.claude.com/en/docs/about-claude/models/overview
+    title: Models overview
+    publisher: Anthropic
+citations:
+  contextWindow: [models]
+  releaseDate: [blog]
+  org: [blog]
+  openness: [blog]
+  summary: [blog]
+status: draft
+updated: 2026-09-30
