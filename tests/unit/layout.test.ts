@@ -1,66 +1,63 @@
 import { describe, expect, it } from "vitest";
-import { layoutLanes, packRows } from "@/lib/layout";
+import { assignSlots, slotOffset } from "@/lib/layout";
 
-describe("packRows", () => {
-  it("keeps non-overlapping intervals on one row", () => {
-    const { rows, count } = packRows([
-      { id: "a", start: 0, end: 10 },
-      { id: "b", start: 20, end: 30 },
-    ]);
-    expect(count).toBe(1);
-    expect(rows.get("b")).toBe(0);
+describe("assignSlots", () => {
+  it("keeps well-spaced nodes on the centre line", () => {
+    const slots = assignSlots(
+      [
+        { id: "a", x: 0 },
+        { id: "b", x: 20 },
+        { id: "c", x: 40 },
+      ],
+      14,
+    );
+    expect([...slots.values()]).toEqual([0, 0, 0]);
   });
 
-  it("stacks overlapping intervals and reuses freed rows", () => {
-    const { rows, count } = packRows(
+  it("moves crowded nodes above, then below, and returns to the centre when there's room", () => {
+    const slots = assignSlots(
       [
-        { id: "a", start: 0, end: 50 },
-        { id: "b", start: 10, end: 40 },
-        { id: "c", start: 45, end: 60 },
-        { id: "d", start: 70, end: 80 },
+        { id: "a", x: 0 },
+        { id: "b", x: 4 },
+        { id: "c", x: 8 },
+        { id: "d", x: 30 },
       ],
-      2,
+      14,
     );
-    expect(rows.get("a")).toBe(0);
-    expect(rows.get("b")).toBe(1);
-    expect(rows.get("c")).toBe(1); // b ends at 40 (+2 gap) before c starts at 45
-    expect(rows.get("d")).toBe(0);
-    expect(count).toBe(2);
+    expect(slots.get("a")).toBe(0);
+    expect(slots.get("b")).toBe(1);
+    expect(slots.get("c")).toBe(2);
+    expect(slots.get("d")).toBe(0);
   });
 
-  it("respects the gap", () => {
-    const { count } = packRows(
+  it("reuses the line that frees up soonest when every line is taken", () => {
+    const slots = assignSlots(
       [
-        { id: "a", start: 0, end: 10 },
-        { id: "b", start: 12, end: 20 },
+        { id: "a", x: 0 },
+        { id: "b", x: 1 },
+        { id: "c", x: 2 },
+        { id: "d", x: 3 },
       ],
-      5,
+      14,
     );
-    expect(count).toBe(2);
+    expect(slots.get("d")).toBe(0);
+  });
+
+  it("orders by position, not input order", () => {
+    const slots = assignSlots(
+      [
+        { id: "late", x: 5 },
+        { id: "early", x: 0 },
+      ],
+      14,
+    );
+    expect(slots.get("early")).toBe(0);
+    expect(slots.get("late")).toBe(1);
   });
 });
 
-describe("layoutLanes", () => {
-  const opts = { rowHeight: 30, lanePadding: 5, gap: 10, top: 0 };
-
-  it("stacks lanes in order and sizes them by their row count", () => {
-    const { lanes, nodes, height } = layoutLanes(
-      ["x", "y", "empty"],
-      [
-        { id: "a", lane: "x", label: "Alpha", x: 0 },
-        { id: "b", lane: "x", label: "Beta", x: 5 },
-        { id: "c", lane: "y", label: "Gamma", x: 0 },
-      ],
-      opts,
-    );
-    expect(lanes.map((l) => [l.id, l.y, l.rows])).toEqual([
-      ["x", 0, 2],
-      ["y", 70, 1],
-      ["empty", 110, 1],
-    ]);
-    expect(height).toBe(150);
-    expect(nodes.get("a")!.y).toBe(20);
-    expect(nodes.get("b")!.y).toBe(50);
-    expect(nodes.get("c")!.y).toBe(90);
+describe("slotOffset", () => {
+  it("alternates above and below the centre", () => {
+    expect([0, 1, 2, 3, 4].map((s) => slotOffset(s, 10))).toEqual([0, -10, 10, -20, 20]);
   });
 });

@@ -8,7 +8,6 @@ describe("URL codec", () => {
   it("round-trips a full view state", () => {
     const state: ViewState = {
       model: "gpt-4",
-      view: "list",
       filters: {
         orgs: ["acme", "beta"],
         types: ["llm", "reasoning"],
@@ -25,17 +24,16 @@ describe("URL codec", () => {
   });
 
   it("serializes the default state to an empty string", () => {
-    expect(serializeViewState({ filters: EMPTY_FILTERS, view: "timeline" })).toBe("");
+    expect(serializeViewState({ filters: EMPTY_FILTERS })).toBe("");
   });
 
   it("drops unknown values instead of failing", () => {
-    const s = parseViewState(new URLSearchParams("org=acme,nope&type=bogus&open=closed&model=missing&from=20x&view=grid"), known);
+    const s = parseViewState(new URLSearchParams("org=acme,nope&type=bogus&open=closed&model=missing&from=20x"), known);
     expect(s.filters.orgs).toEqual(["acme"]);
     expect(s.filters.types).toEqual([]);
     expect(s.filters.openness).toEqual(["closed"]);
     expect(s.model).toBeUndefined();
     expect(s.filters.from).toBeUndefined();
-    expect(s.view).toBe("timeline");
   });
 
   it("repairs an inverted year range", () => {

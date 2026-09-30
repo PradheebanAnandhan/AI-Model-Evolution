@@ -1,44 +1,36 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Link from "next/link";
+import { ChartFallback } from "@/components/ChartFallback";
 import { Explorer } from "@/components/Explorer";
+import { Hero } from "@/components/Hero";
 import { SiteHeader } from "@/components/SiteHeader";
-import { ANNOTATIONS } from "@/content/annotations";
-import { CHAPTERS } from "@/content/story";
+import { Horizon } from "@/components/SpaceBackground";
+import { MILESTONE_IDS } from "@/content/milestones";
 import { getDataset } from "@/lib/data";
-import { formatDate } from "@/lib/format";
+import { atlasStats, newestOf } from "@/lib/stats";
 
 export const metadata: Metadata = {
-  title: "Timeline",
-  description: "Pan, zoom and search an interactive timeline of AI models and their lineage.",
+  title: "Explore",
+  description: "Search, filter and sort every AI model in the atlas, and read each one's sourced record.",
 };
 
 export default function ExplorePage() {
   const dataset = getDataset();
-  const priorityIds = [...new Set([...CHAPTERS.flatMap((c) => c.models), ...ANNOTATIONS.map((a) => a.model)])];
+  const stats = atlasStats(dataset);
+
   return (
-    <div className="flex h-dvh flex-col">
+    <div className="flex min-h-dvh flex-col lg:h-dvh">
       <SiteHeader />
-      {/* The explorer reads its state from the URL, so it renders on the client; the fallback is a crawlable list. */}
-      <Suspense
-        fallback={
-          <main className="mx-auto w-full max-w-3xl overflow-auto px-4 py-10">
-            <h1 className="font-display text-3xl font-semibold">AI models, 2017 to today</h1>
-            <ul className="mt-6 space-y-1 text-[14px]">
-              {[...dataset.models].reverse().map((m) => (
-                <li key={m.id}>
-                  <Link href={`/models/${m.id}`} className="link">
-                    {m.name}
-                  </Link>{" "}
-                  <span className="text-ink-3">— {formatDate(m.releaseDate)}</span>
-                </li>
-              ))}
-            </ul>
-          </main>
-        }
-      >
-        <Explorer dataset={dataset} variant="full" priorityIds={priorityIds} annotations={ANNOTATIONS} />
-      </Suspense>
+      <Horizon />
+      <main className="flex min-h-0 flex-1 flex-col">
+        <Hero title="Explore" accent="every model" stats={stats}>
+          Search, filter and sort all {stats.models} records. Pick a model to read its record: release date, openness, parameters, context window and lineage, each
+          with its source.
+        </Hero>
+        <Suspense fallback={<ChartFallback models={dataset.models} label="Loading the table…" />}>
+          <Explorer dataset={dataset} view="list" priorityIds={MILESTONE_IDS} featuredId={newestOf(dataset.models, MILESTONE_IDS)} />
+        </Suspense>
+      </main>
     </div>
   );
 }

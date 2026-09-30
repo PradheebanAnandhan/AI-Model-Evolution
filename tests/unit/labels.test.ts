@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { placeLabels, type LabelRequest } from "@/lib/labels";
+import { placeLabels, sideCandidates, type LabelRequest } from "@/lib/labels";
 
 const req = (id: string, x: number, y: number, extra: Partial<LabelRequest> = {}): LabelRequest => ({
   id,
@@ -62,5 +62,24 @@ describe("placeLabels", () => {
   it("respects the horizontal bounds", () => {
     const placed = placeLabels([req("a", 980, 50)], [], opts);
     expect(placed.get("a")!.candidate).not.toBe(0);
+  });
+});
+
+describe("placeLabels with side candidates", () => {
+  const side = { ...opts, candidates: sideCandidates };
+
+  it("hangs a label below and to the right of its dot, clear of the line through it", () => {
+    const placed = placeLabels([req("a", 100, 50, { height: 30 })], [], side);
+    expect(placed.get("a")).toMatchObject({ candidate: 0, x: 110, y: 52 });
+  });
+
+  it("tries the preferred positions in order", () => {
+    const placed = placeLabels([req("a", 100, 50, { height: 30, prefer: [1, 0] })], [], side);
+    expect(placed.get("a")).toMatchObject({ candidate: 1, y: 18 });
+  });
+
+  it("flips to the left near the right edge", () => {
+    const placed = placeLabels([req("a", 980, 50, { height: 30 })], [], side);
+    expect(placed.get("a")!.candidate).toBe(3);
   });
 });

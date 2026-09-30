@@ -85,6 +85,18 @@ export const TYPE_LABEL = {
   code: "Code",
 } as const;
 
+/** Short labels for filter chips. */
+export const TYPE_SHORT = {
+  llm: "Language",
+  reasoning: "Reasoning",
+  multimodal: "Multimodal",
+  image: "Image",
+  video: "Video",
+  audio: "Audio",
+  embedding: "Embedding",
+  code: "Code",
+} as const;
+
 export const RELATION_LABEL = {
   "successor-of": { forward: "Successor of", backward: "Succeeded by" },
   "derived-from": { forward: "Derived from", backward: "Basis for" },

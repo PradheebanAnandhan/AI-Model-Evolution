@@ -51,16 +51,19 @@ function StoryInner({ data, chapters, desktop }: { data: RibbonData; chapters: C
   });
 
   return (
-    <section id="story" ref={ref} className="relative mt-24 scroll-mt-16 border-t border-rule" aria-label="How we got here">
-      <div className="mx-auto max-w-[1400px] px-4 pt-16 sm:px-6">
+    <section id="story" ref={ref} className="relative" aria-label="How we got here">
+      <div className="mx-auto max-w-[1400px] px-4 pt-14 sm:px-6">
         <p className="kicker">The story so far</p>
-        <h2 className="font-display mt-3 max-w-3xl text-[clamp(2rem,3.6vw,3rem)] font-semibold leading-[1.08] tracking-[-0.02em]">
-          How we got here, in {n} chapters
-        </h2>
+        <h1 className="mt-3 max-w-3xl text-[clamp(2.1rem,4vw,3.3rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">
+          How we got here, <span className="text-gradient">in {n} chapters</span>
+        </h1>
+        <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-ink-2">
+          Scroll from the Transformer in 2017 to this year&apos;s frontier models. The chart follows along, lighting up each era and the releases that defined it.
+        </p>
       </div>
 
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:grid md:grid-cols-12 md:gap-12">
-        <div className="sticky top-14 z-10 -mx-4 h-[46vh] bg-paper px-4 pb-3 pt-3 md:order-2 md:col-span-7 md:col-start-6 md:row-start-1 md:top-[10vh] md:mx-0 md:h-[80vh] md:bg-transparent md:p-0">
+        <div className="sticky top-16 z-10 -mx-4 h-[46vh] bg-paper/95 px-4 pb-3 pt-3 md:order-2 md:col-span-7 md:col-start-6 md:row-start-1 md:top-[12vh] md:mx-0 md:h-[78vh] md:bg-transparent md:p-0">
           <EvolutionRibbon data={data} chapters={chapters} progress={progress} active={active} />
         </div>
 
@@ -69,14 +72,14 @@ function StoryInner({ data, chapters, desktop }: { data: RibbonData; chapters: C
             <motion.article
               key={c.id}
               className="flex min-h-[56vh] flex-col justify-center py-8 md:min-h-[88vh] md:py-12"
-              animate={{ opacity: i === active ? 1 : 0.3 }}
+              animate={{ opacity: i === active ? 1 : 0.28 }}
               transition={{ duration: 0.45, ease: ease.out }}
             >
               <p className="kicker">
                 Chapter {i + 1} · {yearsOf(c)}
               </p>
-              <h3 className="font-display mt-2 text-[clamp(1.8rem,2.6vw,2.4rem)] font-semibold leading-[1.1] tracking-[-0.02em]">{c.title}</h3>
-              <p className="font-display mt-4 text-[19px] leading-[1.6] text-ink-2">{c.body}</p>
+              <h2 className="mt-2 text-[clamp(1.7rem,2.5vw,2.3rem)] font-semibold leading-[1.1] tracking-[-0.025em] text-white">{c.title}</h2>
+              <p className="mt-4 text-[17px] leading-[1.7] text-ink-2">{c.body}</p>
               <ul className="mt-5 flex flex-wrap gap-2">
                 {c.models.map((id) => {
                   const mm = byId.get(id);
@@ -84,10 +87,10 @@ function StoryInner({ data, chapters, desktop }: { data: RibbonData; chapters: C
                   return (
                     <li key={id}>
                       <Link
-                        href={`/explore?model=${id}`}
-                        className="inline-flex items-center gap-2 rounded-full border border-rule-2 bg-card px-3 py-1 text-[13px] font-medium text-ink transition-colors hover:border-ink"
+                        href={`/?model=${id}`}
+                        className="inline-flex items-center gap-2 rounded-xl border border-rule bg-glass px-3 py-1.5 text-[13px] font-medium text-ink transition-colors hover:border-rule-2 hover:text-white"
                       >
-                        <span className="size-2 rounded-full" style={{ background: mm.color }} aria-hidden="true" />
+                        <span className="size-2 rounded-full" style={{ background: mm.color, boxShadow: `0 0 8px ${mm.color}` }} aria-hidden="true" />
                         {mm.name}
                       </Link>
                     </li>

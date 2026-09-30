@@ -10,6 +10,7 @@ import type { ModelIndexEntry } from "@/lib/model-index";
 import { riseIn, stagger } from "@/lib/motion";
 import type { CitableField, Model, Organization } from "@/lib/schema";
 import { ExternalIcon } from "./icons";
+import { OrgBadge } from "./OrgBadge";
 
 export interface ModelDetailProps {
   model: Model;
@@ -82,7 +83,7 @@ function CopyLink({ id }: { id: string }) {
       className="inline-flex items-center rounded-md border border-rule-2 px-2 py-1 text-[12px] text-ink-2 transition-colors hover:border-ink hover:text-ink"
       onClick={async () => {
         try {
-          await navigator.clipboard.writeText(`${window.location.origin}/explore?model=${id}`);
+          await navigator.clipboard.writeText(`${window.location.origin}/?model=${id}`);
           setCopied(true);
           setTimeout(() => setCopied(false), 1600);
         } catch {
@@ -106,7 +107,7 @@ export function ModelDetail({ model: m, org, incoming, index, onSelectModel, hea
     const entry = index[id];
     const inner = (
       <>
-        <span className="size-2 shrink-0 rounded-full" style={{ background: entry?.color }} aria-hidden="true" />
+        <span className="size-2 shrink-0 rounded-full" style={{ background: entry?.color, boxShadow: `0 0 8px ${entry?.color}` }} aria-hidden="true" />
         <span className="font-medium text-ink underline decoration-rule-2 underline-offset-[3px] group-hover:decoration-ink">{entry?.name ?? id}</span>
         {entry && <span className="ml-auto text-[12px] tabular-nums text-ink-3">{formatDate(entry.date)}</span>}
       </>
@@ -128,11 +129,12 @@ export function ModelDetail({ model: m, org, incoming, index, onSelectModel, hea
   return (
     <motion.article variants={container} initial={animated ? "hidden" : false} animate="show">
       <motion.header variants={riseIn}>
-        <p className="text-[13px] text-ink-3">
+        <p className="flex items-center gap-2 text-[13px] text-ink-3">
+          {org && <OrgBadge org={org} size={22} />}
           {org?.name ?? m.org}
           <Cite model={m} field="org" /> · {m.family} family
         </p>
-        <Heading className="font-display mt-1 text-[34px] font-semibold leading-[1.08] tracking-[-0.02em] text-ink">{m.name}</Heading>
+        <Heading className="mt-1 text-[clamp(2rem,5vw,2.6rem)] font-semibold leading-[1.06] tracking-[-0.03em] text-white">{m.name}</Heading>
         {m.aliases.length > 0 && <p className="mt-1 text-[13px] text-ink-3">Also known as {m.aliases.join(", ")}</p>}
         <p className="mt-3 text-[14px] text-ink-2">
           Released {formatDate(m.releaseDate)}
@@ -146,7 +148,7 @@ export function ModelDetail({ model: m, org, incoming, index, onSelectModel, hea
         )}
       </motion.header>
 
-      <motion.p variants={riseIn} className="font-display mt-5 text-[18px] leading-[1.55] text-ink-2">
+      <motion.p variants={riseIn} className="mt-5 text-[16.5px] leading-[1.7] text-ink-2">
         {m.summary}
         <Cite model={m} field="summary" />
       </motion.p>

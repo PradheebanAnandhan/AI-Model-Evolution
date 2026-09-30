@@ -132,7 +132,7 @@ export function EvolutionRibbon({ data, chapters, progress, active }: EvolutionR
     <div ref={ref} className="card relative h-full w-full overflow-hidden">
       {w > 0 && (
         <svg width={w} height={h} className="block" role="img" aria-label={`Every model in the atlas; highlighted: ${chapter.title}, ${fromYear}${toYear !== fromYear ? `–${toYear}` : ""}.`}>
-          <text x={18} y={24} fontSize={12} fill="#8a867d">
+          <text x={18} y={24} fontSize={12} fill="#7c86a1">
             Chapter {active + 1} of {chapters.length}
           </text>
           <AnimatePresence mode="wait" initial={false}>
@@ -142,8 +142,8 @@ export function EvolutionRibbon({ data, chapters, progress, active }: EvolutionR
               y={54}
               fontSize={30}
               fontWeight={600}
-              fill="#1b1a17"
-              style={{ fontFamily: "var(--font-newsreader), Georgia, serif", fontVariantNumeric: "lining-nums" }}
+              fill="#ffffff"
+              style={{ fontVariantNumeric: "tabular-nums", letterSpacing: "-0.02em" }}
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -4 }}
@@ -157,12 +157,12 @@ export function EvolutionRibbon({ data, chapters, progress, active }: EvolutionR
           <g transform={`translate(${m.left},${m.top})`}>
             {/* Highlighter band over the current era, scrubbed by scroll */}
             <svg x={0} y={0} width={plotW} height={plotH} overflow="visible">
-              <motion.rect x={bandX} width={bandW} y={-10} height={plotH + 20} fill="#fbe7a1" fillOpacity={0.7} />
+              <motion.rect x={bandX} width={bandW} y={-10} height={plotH + 20} rx={6} fill="#9d8cff" fillOpacity={0.13} stroke="#9d8cff" strokeOpacity={0.35} />
             </svg>
 
             {data.orgs.map((o, i) => (
               <g key={o.id}>
-                <line x1={0} x2={plotW} y1={(i + 1) * laneH} y2={(i + 1) * laneH} stroke="#efece5" />
+                <line x1={0} x2={plotW} y1={(i + 1) * laneH} y2={(i + 1) * laneH} stroke="rgb(150 165 220 / 0.08)" />
                 {laneLabels && (
                   <text
                     x={-10}
@@ -171,7 +171,7 @@ export function EvolutionRibbon({ data, chapters, progress, active }: EvolutionR
                     textAnchor="end"
                     fontSize={11}
                     fontWeight={data.models.some((mm) => mm.org === o.id && key.has(mm.id)) ? 600 : 400}
-                    fill={data.models.some((mm) => mm.org === o.id && key.has(mm.id)) ? "#1b1a17" : "#8a867d"}
+                    fill={data.models.some((mm) => mm.org === o.id && key.has(mm.id)) ? "#ffffff" : "#7c86a1"}
                   >
                     {o.shortName ?? o.name}
                   </text>
@@ -183,8 +183,8 @@ export function EvolutionRibbon({ data, chapters, progress, active }: EvolutionR
               const x = norm(Date.UTC(y, 0, 1)) * plotW;
               return (
                 <g key={y}>
-                  <line x1={x} x2={x} y1={0} y2={plotH} stroke="#efece5" />
-                  <text x={x + 3} y={plotH + 18} fontSize={11} fill="#8a867d" style={{ fontVariantNumeric: "tabular-nums" }}>
+                  <line x1={x} x2={x} y1={0} y2={plotH} stroke="rgb(150 165 220 / 0.08)" />
+                  <text x={x + 3} y={plotH + 18} fontSize={11} fill="#7c86a1" style={{ fontVariantNumeric: "tabular-nums" }}>
                     {w < 520 ? `’${String(y).slice(2)}` : y}
                   </text>
                 </g>
@@ -201,7 +201,7 @@ export function EvolutionRibbon({ data, chapters, progress, active }: EvolutionR
                   key={`${e.from}-${e.to}`}
                   d={`M${a.x},${a.y} C${a.x + dx},${a.y} ${b.x - dx},${b.y} ${b.x},${b.y}`}
                   fill="none"
-                  stroke="#e5e1d8"
+                  stroke="rgb(150 165 220 / 0.16)"
                   strokeWidth={0.9}
                 />
               );
@@ -239,8 +239,8 @@ export function EvolutionRibbon({ data, chapters, progress, active }: EvolutionR
                   cx={p.x}
                   cy={p.y}
                   r={3}
-                  fill={isKey || within ? mm.color : "#d6d1c6"}
-                  stroke={isKey ? "#fff" : "none"}
+                  fill={isKey || within ? mm.color : "#2b3252"}
+                  stroke={isKey ? "#05070d" : "none"}
                   strokeWidth={1.2}
                   style={
                     {
@@ -248,6 +248,7 @@ export function EvolutionRibbon({ data, chapters, progress, active }: EvolutionR
                       transformBox: "fill-box",
                       transformOrigin: "center",
                       transition: "transform 450ms var(--ease-out), fill 450ms",
+                      filter: isKey ? `drop-shadow(0 0 4px ${mm.color})` : undefined,
                     } as CSSProperties
                   }
                 />
@@ -266,15 +267,15 @@ export function EvolutionRibbon({ data, chapters, progress, active }: EvolutionR
                     exit={{ opacity: 0, transition: { duration: 0.15 } }}
                     transition={{ duration: 0.35, delay: 0.15 + i * 0.06 }}
                   >
-                    {Math.abs(midY - l.dot.y) > 2 && <line x1={l.dot.x} y1={l.dot.y} x2={attachX} y2={midY} stroke="#8a867d" strokeWidth={0.8} />}
+                    {Math.abs(midY - l.dot.y) > 2 && <line x1={l.dot.x} y1={l.dot.y} x2={attachX} y2={midY} stroke="#5d6784" strokeWidth={0.8} />}
                     <text
                       x={l.x}
                       y={midY}
                       dy="0.35em"
                       fontSize={12}
                       fontWeight={600}
-                      fill="#1b1a17"
-                      style={{ paintOrder: "stroke", stroke: "#fff", strokeWidth: 4, strokeLinejoin: "round" }}
+                      fill="#f1f4fb"
+                      style={{ paintOrder: "stroke", stroke: "#070a14", strokeWidth: 4, strokeLinejoin: "round" }}
                     >
                       {l.name}
                     </text>

@@ -16,6 +16,8 @@ export interface LabelRequest {
   bandBottom: number;
   /** Place even if nothing is free (hovered or selected models). */
   force?: boolean;
+  /** Candidate positions to try, in order. Defaults to every candidate in order. */
+  prefer?: number[];
 }
 
 export interface Box {
@@ -37,6 +39,8 @@ export interface PlaceOptions {
   /** Candidate used for each label last time; those labels are placed first and keep their spot if it's still free. */
   previous?: Map<string, number>;
   padding?: number;
+  /** Candidate boxes for a label. Defaults to `candidateBoxes`. */
+  candidates?: (l: LabelRequest) => Box[];
 }
 
 /** Right of the dot, above it, below it, then left of it. */
@@ -47,6 +51,26 @@ export function candidateBoxes(l: LabelRequest): Box[] {
     { x: l.x - l.r, y: l.y - l.r - gap / 2 - l.height, w: l.width, h: l.height },
     { x: l.x - l.r, y: l.y + l.r + gap / 2, w: l.width, h: l.height },
     { x: l.x - l.r - gap - l.width, y: l.y - l.height / 2, w: l.width, h: l.height },
+  ];
+}
+
+/**
+ * For taller labels that hang beside the dot, clear of the line through it:
+ * 0 below-right, 1 above-right, 2 right (centred), 3 below-left, 4 above-left.
+ */
+export function sideCandidates(l: LabelRequest): Box[] {
+  const gap = 5;
+  const right = l.x + l.r + gap;
+  const left = l.x - l.r - gap - l.width;
+  const below = l.y + 2;
+  const above = l.y - 2 - l.height;
+  const middle = l.y - l.height / 2;
+  return [
+    { x: right, y: below, w: l.width, h: l.height },
+    { x: right, y: above, w: l.width, h: l.height },
+    { x: right + 2, y: middle, w: l.width, h: l.height },
+    { x: left, y: below, w: l.width, h: l.height },
+    { x: left, y: above, w: l.width, h: l.height },
   ];
 }
 
@@ -73,10 +97,10 @@ export function placeLabels(requests: LabelRequest[], obstacles: (Box & { id?: s
   const taken: Box[] = [];
 
   for (const l of order) {
-    const boxes = candidateBoxes(l);
-    const tryOrder = [0, 1, 2, 3];
+    const boxes = (opts.candidates ?? candidateBoxes)(l);
+    const tryOrder = [...(l.prefer ?? boxes.map((_, i) => i))];
     const last = prev?.get(l.id);
-    if (last !== undefined) tryOrder.sort((a, b) => Number(b === last) - Number(a === last));
+    if (last !== undefined && tryOrder.includes(last)) tryOrder.sort((a, b) => Number(b === last) - Number(a === last));
 
     let chosen: number | undefined;
     for (const i of tryOrder) {
@@ -87,7 +111,10 @@ export function placeLabels(requests: LabelRequest[], obstacles: (Box & { id?: s
       chosen = i;
       break;
     }
-    if (chosen === undefined && l.force) chosen = last ?? 0;
+    if (chosen === undefined && l.force) {
+      const inside = tryOrder.find((i) => boxes[i].x >= opts.minX && boxes[i].x + boxes[i].w <= opts.maxX);
+      chosen = last ?? inside ?? tryOrder[0];
+    }
     if (chosen === undefined) continue;
 
     const b = boxes[chosen];

@@ -1,23 +1,35 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 import Fuse from "fuse.js";
-import { formatDate, TYPE_LABEL } from "@/lib/format";
+import { LOCATE_EVENT } from "@/lib/events";
+import { formatDate } from "@/lib/format";
 import { ease, spring } from "@/lib/motion";
-import type { Model, Organization } from "@/lib/schema";
 import { SearchIcon } from "../icons";
 
-interface CommandPaletteProps {
-  models: Model[];
-  organizations: Organization[];
-  onPick: (id: string) => void;
+export interface SearchItem {
+  id: string;
+  name: string;
+  aliases: string[];
+  family: string;
+  orgName: string;
+  color: string;
+  type: string;
+  date: string;
+  variants: string[];
 }
 
-/** The search field in the chart toolbar, and the ⌘K dialog it opens. */
-export function CommandPalette({ models, organizations, onPick }: CommandPaletteProps) {
+/** Pages that show the chart handle a pick in place; others open the timeline. */
+const CHART_PAGES = new Set(["/", "/explore"]);
+
+/** The header's search field and the ⌘K dialog it opens. `items` are newest first. */
+export function HeaderSearch({ items }: { items: SearchItem[] }) {
   const [open, setOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
+  const router = useRouter();
 
   // ⌘K / Ctrl+K anywhere, or "/" outside text fields.
   useEffect(() => {
@@ -38,81 +50,69 @@ export function CommandPalette({ models, organizations, onPick }: CommandPalette
     triggerRef.current?.focus();
   };
 
+  const pick = (id: string) => {
+    setOpen(false);
+    if (CHART_PAGES.has(pathname)) {
+      const params = new URLSearchParams(window.location.search);
+      params.set("model", id);
+      window.history.pushState(null, "", `?${params.toString().replace(/%2C/g, ",")}`);
+      window.dispatchEvent(new CustomEvent(LOCATE_EVENT, { detail: id }));
+    } else {
+      router.push(`/?model=${encodeURIComponent(id)}`);
+    }
+  };
+
   return (
     <>
       <button
         ref={triggerRef}
         type="button"
         onClick={() => setOpen(true)}
-        className="flex h-9 w-full max-w-xs items-center gap-2.5 rounded-full border border-rule-2 bg-paper px-3.5 text-left text-[13.5px] text-ink-3 transition-colors hover:border-ink hover:text-ink-2"
+        className="flex h-10 items-center gap-2.5 rounded-xl border border-rule bg-glass px-3 text-left text-[13.5px] text-ink-3 transition-colors hover:border-rule-2 hover:text-ink-2 sm:w-[min(340px,34vw)] sm:px-3.5"
         aria-haspopup="dialog"
+        aria-label="Search models and labs"
       >
-        <SearchIcon />
-        <span className="flex-1 truncate">Find a model or lab</span>
-        <kbd className="hidden rounded border border-rule-2 bg-card px-1.5 text-[11px] text-ink-3 sm:inline">⌘K</kbd>
+        <SearchIcon width={17} height={17} />
+        <span className="hidden flex-1 truncate sm:inline">Search models, labs, families…</span>
+        <kbd className="hidden rounded-md border border-rule-2 bg-white/[0.03] px-1.5 py-0.5 text-[11px] font-medium text-ink-3 sm:inline">⌘K</kbd>
       </button>
-      <AnimatePresence>
-        {open && (
-          <Palette
-            models={models}
-            organizations={organizations}
-            onPick={(id) => {
-              onPick(id);
-              setOpen(false);
-            }}
-            onClose={close}
-          />
-        )}
-      </AnimatePresence>
+      <AnimatePresence>{open && <Palette items={items} onPick={pick} onClose={close} />}</AnimatePresence>
     </>
   );
 }
 
-function Palette({ models, organizations, onPick, onClose }: CommandPaletteProps & { onClose: () => void }) {
+function Palette({ items, onPick, onClose }: { items: SearchItem[]; onPick: (id: string) => void; onClose: () => void }) {
   const listId = useId();
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
-  const orgs = useMemo(() => new Map(organizations.map((o) => [o.id, o])), [organizations]);
 
   const fuse = useMemo(
     () =>
-      new Fuse(
-        models.map((m) => ({ ...m, orgName: orgs.get(m.org)?.name ?? m.org })),
-        {
-          keys: [
-            { name: "name", weight: 3 },
-            { name: "aliases", weight: 2 },
-            { name: "family", weight: 1 },
-            { name: "orgName", weight: 1 },
-            { name: "variants.name", weight: 1 },
-          ],
-          threshold: 0.35,
-          ignoreLocation: true,
-        },
-      ),
-    [models, orgs],
+      new Fuse(items, {
+        keys: [
+          { name: "name", weight: 3 },
+          { name: "aliases", weight: 2 },
+          { name: "family", weight: 1 },
+          { name: "orgName", weight: 1 },
+          { name: "variants", weight: 1 },
+        ],
+        threshold: 0.35,
+        ignoreLocation: true,
+      }),
+    [items],
   );
 
   const q = query.trim();
-  const results = useMemo(
-    () => (q ? fuse.search(q, { limit: 8 }).map((r) => r.item as Model) : [...models].reverse().slice(0, 6)),
-    [fuse, q, models],
-  );
+  const results = useMemo(() => (q ? fuse.search(q, { limit: 8 }).map((r) => r.item) : items.slice(0, 6)), [fuse, q, items]);
 
   return (
-    <motion.div
-      className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-[12vh]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.15 }}
-    >
-      <div className="absolute inset-0 bg-[rgb(27_26_23/0.28)]" onClick={onClose} aria-hidden="true" />
+    <motion.div className="fixed inset-0 z-50 flex items-start justify-center px-4 pt-[12vh]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}>
+      <div className="absolute inset-0 bg-[rgb(2_4_10/0.72)]" onClick={onClose} aria-hidden="true" />
       <motion.div
         role="dialog"
         aria-modal="true"
         aria-label="Search models"
-        className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-rule bg-card shadow-[0_30px_80px_-20px_rgb(27_26_23/0.45)]"
+        className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-rule-2 bg-card shadow-[0_40px_100px_-20px_rgb(0_0_0/0.9),0_0_0_1px_rgb(157_140_255/0.08),0_0_60px_-20px_rgb(143_125_255/0.5)]"
         initial={{ opacity: 0, scale: 0.97, y: -8 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.98, y: -4 }}
@@ -151,7 +151,7 @@ function Palette({ models, organizations, onPick, onClose }: CommandPaletteProps
               }
             }}
           />
-          <kbd className="rounded border border-rule-2 px-1.5 text-[11px] text-ink-3">Esc</kbd>
+          <kbd className="rounded-md border border-rule-2 px-1.5 text-[11px] text-ink-3">Esc</kbd>
         </div>
 
         <div className="px-4 pb-1 pt-3 text-[12px] font-medium text-ink-3">{q ? "Matches" : "Latest releases"}</div>
@@ -159,7 +159,6 @@ function Palette({ models, organizations, onPick, onClose }: CommandPaletteProps
           <ul id={listId} role="listbox" aria-label="Models" className="max-h-[50vh] overflow-y-auto px-2 pb-2">
             {results.length === 0 && <li className="px-3 py-6 text-center text-[14px] text-ink-3">No models match “{q}”.</li>}
             {results.map((m, i) => {
-              const org = orgs.get(m.org);
               const isActive = i === active;
               return (
                 <motion.li
@@ -177,15 +176,15 @@ function Palette({ models, organizations, onPick, onClose }: CommandPaletteProps
                     onPick(m.id);
                   }}
                 >
-                  {isActive && <motion.span layoutId="palette-highlight" transition={spring.snappy} className="absolute inset-0 rounded-lg bg-paper-2" />}
-                  <span className="relative size-2.5 shrink-0 rounded-full" style={{ background: org?.color }} aria-hidden="true" />
+                  {isActive && <motion.span layoutId="palette-highlight" transition={spring.snappy} className="absolute inset-0 rounded-lg bg-white/[0.06] ring-1 ring-inset ring-rule" />}
+                  <span className="relative size-2.5 shrink-0 rounded-full" style={{ background: m.color, boxShadow: `0 0 10px ${m.color}` }} aria-hidden="true" />
                   <span className="relative min-w-0 flex-1">
                     <span className="block truncate text-[14.5px] font-medium text-ink">{m.name}</span>
                     <span className="block truncate text-[12.5px] text-ink-3">
-                      {org?.name} · {TYPE_LABEL[m.type]}
+                      {m.orgName} · {m.type}
                     </span>
                   </span>
-                  <span className="relative shrink-0 text-[12px] tabular-nums text-ink-3">{formatDate(m.releaseDate)}</span>
+                  <span className="relative shrink-0 text-[12px] tabular-nums text-ink-3">{formatDate(m.date)}</span>
                 </motion.li>
               );
             })}

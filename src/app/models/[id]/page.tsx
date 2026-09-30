@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ModelOrb } from "@/components/explorer/ModelOrb";
 import { ModelDetail } from "@/components/ModelDetail";
 import { PageShell } from "@/components/PageShell";
 import { getDataset } from "@/lib/data";
@@ -36,9 +37,12 @@ export default async function ModelPage({ params }: PageProps<"/models/[id]">) {
 
   return (
     <PageShell>
-      <Link href={`/explore?model=${model.id}`} className="link text-[14px]">
+      <Link href={`/?model=${model.id}`} className="link text-[14px]">
         ← {model.name} on the timeline
       </Link>
+      <div className="glass mt-6 h-[180px] overflow-hidden rounded-2xl">
+        <ModelOrb seed={model.id} color={organizations.find((o) => o.id === model.org)?.color ?? "#9d8cff"} />
+      </div>
       <div className="mt-8">
         <ModelDetail
           model={model}

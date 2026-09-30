@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Newsreader } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/components/Providers";
+import { SpaceBackground } from "@/components/SpaceBackground";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,13 +14,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const newsreader = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  axes: ["opsz"],
-});
-
 export const metadata: Metadata = {
   title: {
     default: "AI Model Evolution",
@@ -30,14 +24,15 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#faf9f6",
-  colorScheme: "light",
+  themeColor: "#05070d",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable} h-full antialiased`}>
-      <body className="min-h-full bg-paper text-ink">
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <body className="min-h-full text-ink">
+        <SpaceBackground />
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -1,131 +1,137 @@
-import type { ScaleTime } from "d3-scale";
 import type { Annotation } from "@/content/annotations";
 import { formatDate } from "@/lib/format";
 import { measureLabel } from "./measure";
 
-export const AXIS_H = 28;
-export const ANNOT_H = 70;
+export const AXIS_H = 48;
 
-interface HeaderProps {
-  x: ScaleTime<number, number>;
-  width: number;
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const YEAR_Y = 17;
+const FLAG_Y = 36;
+
+interface AxisProps {
+  /** Date to screen x. */
+  x: (d: Date) => number;
+  years: number[];
   left: number;
+  width: number;
+  /** Width of the lab column, under which the axis fades out. */
+  gutter: number;
   today: Date;
-  /** Current time cursor while growing or playing. */
+  /** Current time cursor while growing or playing (-Infinity before the growth starts). */
   cursor: number | null;
-  annotations: (Annotation & { date: string; t: number })[];
+  flags: (Annotation & { date: string; t: number })[];
   onSelect: (id: string) => void;
 }
 
-const isYear = (t: Date) => t.getUTCMonth() === 0 && t.getUTCDate() === 1;
-
-export function tickCount(width: number, left: number) {
-  return Math.max(2, Math.floor((width - left) / 100));
-}
-
-/** The time axis plus the written annotation track beneath it. */
-export function ChartHeader({ x, width, left, today, cursor, annotations, onSelect }: HeaderProps) {
-  const n = tickCount(width, left);
-  const ticks = x.ticks(n);
-  const format = x.tickFormat(n);
+/** Years (with months once there's room), the turning points, and today. */
+export function Axis({ x, years, left, width, gutter, today, cursor, flags, onSelect }: AxisProps) {
+  const fade = `linear-gradient(to right, transparent ${gutter - 20}px, #000 ${gutter + 14}px)`;
   const tx = x(today);
 
-  // Callouts go on one of two rows; one that fits on neither is left out.
-  const rows: number[][] = [[], []];
-  const callouts = annotations
-    .filter((a) => cursor === null || a.t <= cursor)
-    .map((a) => {
-      const ax = x(new Date(a.t));
-      const w = Math.max(measureLabel(a.text, 13, 400) * 1.02, measureLabel(formatDate(a.date), 11, 500)) + 12;
-      return { ...a, ax, w };
-    })
-    .filter((a) => a.ax >= left && a.ax < width - 20)
-    .sort((a, b) => a.ax - b.ax)
-    .map((a) => {
-      const end = a.ax + a.w;
-      const row = rows.findIndex((r) => r.every((e) => e + 10 < a.ax));
-      if (row === -1 || end > width - 4) return null;
-      rows[row].push(end);
-      return { ...a, row };
-    })
-    .filter((a) => a !== null);
+  // Year labels sit on the year's first day; drop one that would crowd its neighbour.
+  const yearMarks: { y: number; x0: number; labelled: boolean; months: { name: string; x: number; quarter: boolean }[]; monthLabels: "all" | "quarters" | "none" }[] = [];
+  for (const y of years) {
+    const x0 = x(new Date(Date.UTC(y, 0, 1)));
+    const x1 = x(new Date(Date.UTC(y + 1, 0, 1)));
+    if (x1 < left - 40 || x0 > width + 40) continue;
+    const prev = yearMarks.findLast((m) => m.labelled);
+    const labelled = x0 >= left - 6 && (!prev || x0 - prev.x0 >= 40);
+    const span = x1 - x0;
+    const months = span >= 220 ? MONTHS.slice(1).map((name, i) => ({ name, x: x(new Date(Date.UTC(y, i + 1, 1))), quarter: (i + 1) % 3 === 0 })) : [];
+    yearMarks.push({ y, x0, labelled, months, monthLabels: span >= 640 ? "all" : span >= 300 ? "quarters" : "none" });
+  }
+
+  // Turning points: a diamond on the date, and a caption where it clears every other diamond and caption.
+  const shown = flags
+    .filter((f) => cursor === null || f.t <= cursor)
+    .map((f) => ({ ...f, fx: x(new Date(f.t)) }))
+    .filter((f) => f.fx >= left - 4 && f.fx <= width - 4)
+    .sort((a, b) => a.fx - b.fx);
+  const taken: { x0: number; x1: number; own?: string }[] = shown.map((f) => ({ x0: f.fx - 7, x1: f.fx + 7, own: f.model }));
+  const marks = shown.map((f) => {
+    const box = { x0: f.fx + 10, x1: f.fx + 10 + measureLabel(f.text, 11.5, 500) };
+    const caption = box.x1 <= width - 6 && taken.every((p) => p.own === f.model || box.x1 + 6 < p.x0 || box.x0 > p.x1 + 6);
+    if (caption) taken.push(box);
+    return { ...f, caption };
+  });
+
+  // "Today" sits in the year row, left of its line, unless a year label is in the way.
+  const todayBox = { x0: tx - 50, x1: tx - 6 };
+  const showToday = tx > left + 50 && tx < width && yearMarks.every((m) => !m.labelled || m.x0 + 18 < todayBox.x0 || m.x0 - 18 > todayBox.x1);
 
   return (
-    <svg width={width} height={AXIS_H + ANNOT_H} className="block">
-      {ticks.map((t) => {
-        const px = x(t);
-        if (px < left + 8 || px > width - 8) return null;
-        return (
-          <g key={t.getTime()} transform={`translate(${px},0)`}>
-            <line y1={AXIS_H - 6} y2={AXIS_H} stroke="#cfc9bd" />
-            <text
-              y={AXIS_H - 11}
-              textAnchor="middle"
-              fontSize={11.5}
-              fontWeight={isYear(t) ? 600 : 400}
-              fill={isYear(t) ? "#1b1a17" : "#8a867d"}
-              style={{ fontVariantNumeric: "tabular-nums" }}
-            >
-              {format(t)}
+    <svg width={width} height={AXIS_H} className="block select-none" style={{ maskImage: fade, WebkitMaskImage: fade }}>
+      <defs>
+        <radialGradient id="flag-glow">
+          <stop offset="0" stopColor="#b3a6ff" stopOpacity={0.9} />
+          <stop offset="1" stopColor="#b3a6ff" stopOpacity={0} />
+        </radialGradient>
+      </defs>
+
+      {yearMarks.map((m) => (
+        <g key={m.y}>
+          {m.labelled && (
+            <text x={m.x0} y={YEAR_Y} textAnchor="middle" fontSize={13} fontWeight={600} fill="#9ca6c2" style={{ fontVariantNumeric: "tabular-nums" }}>
+              {m.y}
             </text>
-          </g>
-        );
-      })}
-      <line x1={left} x2={width} y1={AXIS_H - 0.5} y2={AXIS_H - 0.5} stroke="#e5e1d8" />
-
-      {tx > left && tx < width && (
-        <g transform={`translate(${tx},0)`}>
-          <line y1={AXIS_H - 8} y2={AXIS_H + ANNOT_H} stroke="#c8391f" strokeWidth={1} />
-          {/* In the axis row, with a paper halo, so it never collides with annotations. */}
-          <text
-            x={-4}
-            y={AXIS_H - 11}
-            textAnchor="end"
-            fontSize={10.5}
-            fontWeight={700}
-            letterSpacing="0.06em"
-            fill="#c8391f"
-            style={{ paintOrder: "stroke", stroke: "#fff", strokeWidth: 5, strokeLinejoin: "round" }}
-          >
-            TODAY
-          </text>
+          )}
+          <line x1={m.x0} x2={m.x0} y1={YEAR_Y + 6} y2={YEAR_Y + 12} stroke="rgb(160 175 230 / 0.35)" />
+          {m.months.map((mo) =>
+            mo.x < left || mo.x > width ? null : (
+              <g key={mo.name}>
+                <line x1={mo.x} x2={mo.x} y1={YEAR_Y + 8} y2={YEAR_Y + 12} stroke="rgb(160 175 230 / 0.2)" />
+                {(m.monthLabels === "all" || (m.monthLabels === "quarters" && mo.quarter)) && (
+                  <text x={mo.x} y={YEAR_Y} textAnchor="middle" fontSize={10.5} fill="#6f7892">
+                    {mo.name}
+                  </text>
+                )}
+              </g>
+            ),
+          )}
         </g>
-      )}
+      ))}
 
-      {callouts.map((a) => (
+      {marks.map((f) => (
         <g
-          key={a.model}
-          transform={`translate(${a.ax},${AXIS_H})`}
+          key={f.model}
+          transform={`translate(${f.fx},${FLAG_Y})`}
           className="cursor-pointer"
           role="button"
           tabIndex={0}
-          aria-label={`${a.text}, ${formatDate(a.date)}. Select model.`}
-          onClick={() => onSelect(a.model)}
+          aria-label={`${f.text}, ${formatDate(f.date)}. Select model.`}
+          onClick={() => onSelect(f.model)}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
-              onSelect(a.model);
+              onSelect(f.model);
             }
           }}
           style={{ animation: "label-in 300ms var(--ease-out) both" }}
         >
-          <line y1={a.row === 0 ? 7 : 39} y2={ANNOT_H} stroke="#8a867d" strokeDasharray="2 2" />
-          <circle cy={a.row === 0 ? 7 : 39} r={2} fill="#1b1a17" />
-          <text x={6} y={a.row === 0 ? 11 : 43} fontSize={11} fontWeight={600} fill="#8a867d" style={{ fontVariantNumeric: "tabular-nums" }}>
-            {formatDate(a.date)}
-          </text>
-          <text
-            x={6}
-            y={a.row === 0 ? 26 : 58}
-            fontSize={13}
-            fontStyle="italic"
-            fill="#1b1a17"
-            style={{ fontFamily: "var(--font-newsreader), Georgia, serif" }}
-          >
-            {a.text}
-          </text>
+          <title>{`${f.text} · ${formatDate(f.date)}`}</title>
+          <circle r={9} fill="url(#flag-glow)" />
+          <rect x={-3.6} y={-3.6} width={7.2} height={7.2} transform="rotate(45)" fill="#c9bfff" />
+          {f.caption && (
+            <text x={9} y={4} fontSize={11.5} fontWeight={500} fill="#b8c0d8">
+              {f.text}
+            </text>
+          )}
         </g>
       ))}
+
+      {tx > left && tx < width && (
+        <g transform={`translate(${tx},0)`}>
+          <line y1={YEAR_Y - 11} y2={AXIS_H} stroke="var(--today)" strokeWidth={1.5} strokeOpacity={0.8} />
+          <circle cy={YEAR_Y - 11} r={2.5} fill="var(--today)" />
+          {showToday && (
+            <text x={-6} y={YEAR_Y - 1} textAnchor="end" fontSize={10} fontWeight={700} letterSpacing="0.08em" fill="var(--today)">
+              TODAY
+            </text>
+          )}
+        </g>
+      )}
+
+      {cursor !== null && Number.isFinite(cursor) && <line x1={x(new Date(cursor))} x2={x(new Date(cursor))} y1={0} y2={AXIS_H} stroke="var(--today)" strokeWidth={1.5} />}
     </svg>
   );
 }

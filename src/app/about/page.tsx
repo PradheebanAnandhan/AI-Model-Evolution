@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 function H2({ children }: { children: ReactNode }) {
-  return <h2 className="font-display mt-12 text-[1.7rem] font-semibold leading-tight tracking-[-0.015em] text-ink">{children}</h2>;
+  return <h2 className="mt-12 text-[1.55rem] font-semibold leading-tight tracking-[-0.025em] text-white">{children}</h2>;
 }
 
 export default function AboutPage() {
@@ -21,15 +21,17 @@ export default function AboutPage() {
 
   return (
     <PageShell>
-      <article className="font-display text-[19px] leading-[1.65] text-ink-2 [&_li]:mt-2 [&_p]:mt-4">
-        <p className="kicker !mt-0 font-sans">Methodology</p>
-        <h1 className="mt-3 text-[clamp(2.2rem,4.5vw,3.2rem)] font-semibold leading-[1.05] tracking-[-0.025em] text-ink">How this atlas is made</h1>
-        <p className="text-[21px]">
+      <article className="text-[16.5px] leading-[1.75] text-ink-2 [&_li]:mt-2 [&_p]:mt-4">
+        <p className="kicker !mt-0">Methodology</p>
+        <h1 className="mt-3 text-[clamp(2.2rem,4.5vw,3.2rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">
+          How this atlas <span className="text-gradient">is made</span>
+        </h1>
+        <p className="text-[18.5px] text-ink">
           An interactive map of the AI ecosystem: what was released, when, by whom, what it can do, and how each model relates to the ones
           before it.
         </p>
 
-        <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-y border-rule py-5 font-sans sm:grid-cols-4">
+        <dl className="glass mt-8 grid grid-cols-2 gap-x-6 gap-y-4 rounded-2xl px-6 py-5 sm:grid-cols-4">
           {[
             ["Models", models.length],
             ["Labs", organizations.length],
@@ -38,7 +40,7 @@ export default function AboutPage() {
           ].map(([label, value]) => (
             <div key={label}>
               <dt className="text-[12.5px] text-ink-3">{label}</dt>
-              <dd className="font-display text-[28px] font-semibold tabular-nums text-ink">{value}</dd>
+              <dd className="text-[28px] font-semibold tabular-nums tracking-[-0.02em] text-white">{value}</dd>
             </div>
           ))}
         </dl>
@@ -54,15 +56,26 @@ export default function AboutPage() {
 
         <H2>Reading the timeline</H2>
         <ul className="list-disc pl-5 marker:text-ink-3">
-          <li>Each row is a lab, drawn as a track. Each dot is a release, placed on its announcement date.</li>
-          <li>A filled dot means the weights can be downloaded. A ring means the model is closed.</li>
           <li>
-            Lines connect related models. A solid line is a direct successor, a dashed line a fine-tune or derivative, a dotted line a
-            distillation, and a faint line an architectural or methodological influence.
+            Each row is a lab, with its line running through its releases. Labs with fewer than five models share the &ldquo;Other labs&rdquo;
+            row; select it to give each one its own row.
           </li>
           <li>
-            Labels appear where there is room. Story milestones get priority, then the roots of model families, then the newest
-            releases. Hover a dot or zoom in to see the rest.
+            Each glowing dot is a release, placed on its announcement date. A solid dot with a white core means the weights can be
+            downloaded; a ring means the model is closed. Milestones are drawn larger.
+          </li>
+          <li>
+            Lines connect related models and take the newer model&apos;s lab color, blending between colors when they cross labs. A solid
+            line is a direct successor, a dashed line a fine-tune or derivative, a dotted line a distillation, and a faint dotted line an
+            architectural or methodological influence.
+          </li>
+          <li>
+            By default, busier years get more room, so the crowded recent years stay readable. Switch the spacing to
+            &ldquo;Calendar&rdquo; below the chart to give every year the same width; the monthly chart beside it always uses true time.
+          </li>
+          <li>
+            Labels appear where there is room: milestones first, then the roots of model families, then the newest releases. Hover a
+            dot or zoom in (Ctrl or ⌘ + scroll) to see the rest.
           </li>
           <li>Press Play to replay history from 2017, or ⌘K to search. With a keyboard, Tab into the chart and use the arrow keys.</li>
         </ul>
@@ -108,12 +121,12 @@ export default function AboutPage() {
           a sourced draft for a person to review.
         </p>
 
-        <p className="!mt-12 flex flex-wrap gap-6 font-sans text-[15px]">
-          <Link href="/explore" className="link font-medium text-ink">
+        <p className="!mt-12 flex flex-wrap gap-6 text-[15px]">
+          <Link href="/" className="link font-medium text-ink">
             Open the timeline →
           </Link>
-          <Link href="/" className="link">
-            Back to the atlas
+          <Link href="/explore" className="link">
+            Browse every model
           </Link>
         </p>
       </article>

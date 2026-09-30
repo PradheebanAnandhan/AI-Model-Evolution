@@ -20,11 +20,8 @@ export interface Filters {
   hide: boolean;
 }
 
-export type View = "timeline" | "list";
-
 export interface ViewState {
   filters: Filters;
-  view: View;
   model?: string;
 }
 
@@ -87,7 +84,6 @@ export function parseViewState(
       to,
       hide: params.get("hide") === "1",
     },
-    view: params.get("view") === "list" ? "list" : "timeline",
     model: model && known.models.has(model) ? model : undefined,
   };
 }
@@ -95,7 +91,6 @@ export function parseViewState(
 export function serializeViewState(s: ViewState): string {
   const p = new URLSearchParams();
   if (s.model) p.set("model", s.model);
-  if (s.view === "list") p.set("view", "list");
   const f = s.filters;
   if (f.orgs.length) p.set("org", f.orgs.join(","));
   if (f.types.length) p.set("type", f.types.join(","));
